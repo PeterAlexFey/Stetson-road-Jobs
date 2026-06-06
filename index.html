@@ -17,224 +17,226 @@
       --card: #fff; --bg: #f6f4f0; --radius: 14px;
     }
     html, body { height: 100%; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); max-width: 430px; margin: 0 auto; min-height: 100vh; }
-    .header { background: var(--green); padding: 1.5rem 1.25rem 1.25rem; text-align: center; }
-    .header-avatar { width: 48px; height: 48px; border-radius: 50%; background: #5a9e74; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 2px solid rgba(255,255,255,0.3); }
-    .header h1 { font-family: 'Fraunces', serif; color: #fff; font-size: 21px; font-weight: 600; margin-bottom: 3px; }
-    .header .tagline { color: rgba(255,255,255,0.72); font-size: 12px; line-height: 1.5; margin: 0 auto 0.9rem; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); max-width: 430px; margin: 0 auto; min-height: 100vh; font-size: 19px; }
+    .header { background: var(--green); padding: 1.5rem 1.25rem 1.25rem; text-align: center; position: relative; }
+    .header-avatar { width: 52px; height: 52px; border-radius: 50%; background: #5a9e74; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 2px solid rgba(255,255,255,0.3); }
+    .header h1 { font-family: 'Fraunces', serif; color: #fff; font-size: 28px; font-weight: 600; margin-bottom: 4px; }
+    .header .tagline { color: rgba(255,255,255,0.72); font-size: 16px; line-height: 1.5; margin: 0 auto 0.9rem; }
     .header-pills { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
-    .pill { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92); font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
-    .tab-bar { background: var(--card); border-bottom: 0.5px solid var(--border); display: flex; position: sticky; top: 0; z-index: 10; }
-    .tab { flex: 1; padding: 13px 4px; text-align: center; font-size: 13px; font-weight: 500; color: var(--muted); border: none; background: transparent; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
-    .tab.active { color: var(--green); border-bottom-color: var(--green); }
-    .view { display: none; padding: 1.25rem; padding-bottom: 5rem; }
-    .view.active { display: block; }
-    .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.65rem; }
-    .card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem; }
-    .job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .job-btn { padding: 13px 10px; border: 0.5px solid var(--border); border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 500; color: #1a1a18; text-align: left; transition: all 0.15s; display: flex; align-items: center; gap: 9px; font-family: 'DM Sans', sans-serif; line-height: 1.3; -webkit-tap-highlight-color: transparent; }
-    .job-btn i { font-size: 19px; color: #999; flex-shrink: 0; }
+    .pill { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92); font-size: 15px; font-weight: 500; padding: 5px 14px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
+    .payment-badge { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; padding: 5px 9px; font-size: 11px; font-weight: 500; color: #fff; line-height: 1.3; text-align: left; max-width: 110px; }
+    .page { padding: 1.25rem; padding-bottom: 5rem; }
+    .section-label { font-size: 15px; font-weight: 500; color: var(--muted); margin-bottom: 0.75rem; }
+    .card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
+    .section-divider { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin: 2rem 0 1rem; }
+    .job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .job-btn { padding: 16px 13px; border: 0.5px solid var(--border); border-radius: 10px; background: #fff; cursor: pointer; font-size: 17px; font-weight: 500; color: #1a1a18; text-align: left; transition: all 0.15s; display: flex; align-items: center; gap: 10px; font-family: 'DM Sans', sans-serif; line-height: 1.3; -webkit-tap-highlight-color: transparent; }
+    .job-btn i { font-size: 24px; color: #999; flex-shrink: 0; }
     .job-btn.sel { border-color: var(--green); background: var(--green-light); border-width: 1.5px; }
     .job-btn.sel i { color: var(--green); }
-    .field { margin-bottom: 0.9rem; }
+    .field { margin-bottom: 1rem; }
     .field:last-child { margin-bottom: 0; }
-    .field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 5px; }
-    .field input, .field textarea, .field select { width: 100%; padding: 11px 12px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; background: #fff; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
+    .field label { display: block; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+    .field input, .field textarea, .field select { width: 100%; padding: 14px 15px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 17px; background: #fff; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
     .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--green-mid); border-width: 1px; }
-    .field textarea { resize: none; height: 80px; line-height: 1.5; }
+    .field textarea { resize: none; height: 90px; line-height: 1.5; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-    .rate-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
-    .book-btn { width: 100%; padding: 15px; background: #fff; color: #1a1a18; border: 2px solid #1a1a18; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent; }
-    .confirm-wrap { display: none; background: var(--green-light); border: 1px solid #7ab89a; border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem; }
+    .rate-note { font-size: 13px; color: var(--muted); margin-top: 5px; }
+    .book-btn { width: 100%; padding: 19px; background: #fff; color: #1a1a18; border: 2px solid #1a1a18; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent; }
+    .confirm-wrap { display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: var(--green); padding: 1rem 1.25rem; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .confirm-wrap.show { display: block; }
-    .confirm-wrap h3 { font-family: 'Fraunces', serif; color: var(--green); font-size: 16px; margin-bottom: 5px; }
-    .confirm-wrap p { font-size: 13px; color: #2d5a3d; line-height: 1.6; }
-    .fab { position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1a1a18; font-size: 20px; z-index: 20; -webkit-tap-highlight-color: transparent; padding: 0; }
+    .confirm-wrap h3 { font-family: 'Fraunces', serif; color: #fff; font-size: 16px; margin-bottom: 3px; font-weight: 500; }
+    .confirm-wrap p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    .fab { position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1a1a18; font-size: 22px; z-index: 20; -webkit-tap-highlight-color: transparent; padding: 0; }
     .fab.hidden { display: none; }
-    .sheet-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; align-items: flex-end; justify-content: center; }
-    .sheet-backdrop.show { display: flex; }
-    .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: #ddd; margin: 0 auto 1rem; }
-    .pin-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px; }
-    .pin-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-    .pin-sub { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; }
-    .pin-dots { display: flex; gap: 12px; justify-content: center; margin-bottom: 1.5rem; }
-    .pin-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #ccc; background: #fff; transition: all 0.15s; }
-    .pin-dot.filled { background: var(--ink); border-color: var(--ink); }
-    .pin-err { font-size: 12px; color: #c0392b; padding: 8px 10px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; text-align: center; margin-bottom: 1rem; }
-    .pin-err.show { display: block; }
-    .pin-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0.75rem; }
-    .pin-key { padding: 18px; border: 0.5px solid var(--border); border-radius: 12px; background: #fff; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--ink); cursor: pointer; text-align: center; -webkit-tap-highlight-color: transparent; transition: background 0.1s; user-select: none; }
-    .pin-key:active { background: var(--bg); }
-    .pin-key.del { font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--muted); }
-    .pin-key.empty { border-color: transparent; background: transparent; pointer-events: none; }
-    .pin-cancel { width: 100%; padding: 12px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; }
     .cal-top { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
-    .cal-month-label { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; color: var(--ink); }
-    .cal-dow { text-align: center; font-size: 10px; font-weight: 500; color: var(--muted); padding: 3px 0; text-transform: uppercase; letter-spacing: 0.04em; }
-    .cal-day { height: 52px; border-radius: 10px; border: 0.5px solid var(--border); background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: default; -webkit-tap-highlight-color: transparent; position: relative; }
+    .cal-month-label { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); }
+    .cal-dow { text-align: center; font-size: 11px; font-weight: 500; color: var(--muted); padding: 4px 0; text-transform: uppercase; letter-spacing: 0.04em; }
+    .cal-day { height: 54px; border-radius: 10px; border: 0.5px solid var(--border); background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: default; -webkit-tap-highlight-color: transparent; position: relative; }
     .cal-day.empty { background: transparent; border-color: transparent; }
     .cal-day.outside { background: #f0ede9; border-color: transparent; opacity: 0.4; }
     .cal-day.available { cursor: pointer; }
     .cal-day.booked { background: #e0e0de; border-color: #bbb; cursor: pointer; }
     .cal-day.today { border-color: var(--green); border-width: 1.5px; }
-    .cal-day-num { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1; }
+    .cal-day-num { font-size: 15px; font-weight: 500; color: var(--ink); line-height: 1; }
     .cal-day.outside .cal-day-num { color: #bbb; }
     .cal-day.booked .cal-day-num { color: #555; }
-    .day-q { position: absolute; top: 4px; right: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--green); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; font-weight: 700; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; line-height: 1; padding: 0; }
-    .cal-legend { display: flex; gap: 12px; margin-top: 0.875rem; flex-wrap: wrap; }
-    .leg { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
-    .leg-box { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+    .day-q { position: absolute; top: 4px; right: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--green); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; font-weight: 700; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; line-height: 1; padding: 0; }
+    .cal-legend { display: flex; gap: 14px; margin-top: 1rem; flex-wrap: wrap; }
+    .leg { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
+    .leg-box { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+    .sheet-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; align-items: flex-end; justify-content: center; }
+    .sheet-backdrop.show { display: flex; }
+    .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: #ddd; margin: 0 auto 1rem; }
+    .pin-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px; }
+    .pin-title { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .pin-sub { font-size: 15px; color: var(--muted); margin-bottom: 1.25rem; }
+    .pin-dots { display: flex; gap: 14px; justify-content: center; margin-bottom: 1.5rem; }
+    .pin-dot { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #ccc; background: #fff; transition: all 0.15s; }
+    .pin-dot.filled { background: var(--ink); border-color: var(--ink); }
+    .pin-err { font-size: 14px; color: #c0392b; padding: 9px 12px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; text-align: center; margin-bottom: 1rem; }
+    .pin-err.show { display: block; }
+    .pin-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0.75rem; }
+    .pin-key { padding: 20px; border: 0.5px solid var(--border); border-radius: 12px; background: #fff; font-family: 'Fraunces', serif; font-size: 24px; font-weight: 500; color: var(--ink); cursor: pointer; text-align: center; -webkit-tap-highlight-color: transparent; transition: background 0.1s; user-select: none; }
+    .pin-key:active { background: var(--bg); }
+    .pin-key.del { font-family: 'DM Sans', sans-serif; font-size: 18px; color: var(--muted); }
+    .pin-key.empty { border-color: transparent; background: transparent; pointer-events: none; }
+    .pin-cancel { width: 100%; padding: 14px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 16px; cursor: pointer; }
     .sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2rem; width: 100%; max-width: 430px; }
-    .sheet-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-    .sheet-date { font-size: 13px; color: var(--muted); margin-bottom: 1.1rem; }
+    .sheet-title { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .sheet-date { font-size: 15px; color: var(--muted); margin-bottom: 1.1rem; }
     .sheet-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
-    .sheet-field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
-    .sheet-field input { width: 100%; padding: 11px 10px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
+    .sheet-field label { display: block; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
+    .sheet-field input { width: 100%; padding: 13px 12px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
     .sheet-field input:focus { border-color: var(--green-mid); }
-    .sheet-err { font-size: 12px; color: #c0392b; margin-bottom: 0.75rem; padding: 8px 10px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; }
+    .sheet-err { font-size: 13px; color: #c0392b; margin-bottom: 0.75rem; padding: 9px 12px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; }
     .sheet-err.show { display: block; }
     .sheet-name-field { margin-bottom: 0.75rem; }
-    .sheet-name-field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
-    .sheet-name-field input { width: 100%; padding: 11px 10px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
+    .sheet-name-field label { display: block; font-size: 14px; font-weight: 500; color: var(--muted); margin-bottom: 6px; }
+    .sheet-name-field input { width: 100%; padding: 13px 12px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
     .sheet-name-field input:focus { border-color: var(--green-mid); }
-    .sheet-btn { width: 100%; padding: 14px; background: var(--green); color: #fff; border: none; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; cursor: pointer; }
-    .sheet-cancel { width: 100%; padding: 12px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; margin-top: 6px; }
+    .sheet-btn { width: 100%; padding: 15px; background: var(--green); color: #fff; border: none; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; cursor: pointer; }
+    .sheet-cancel { width: 100%; padding: 13px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 15px; cursor: pointer; margin-top: 6px; }
     .info-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px; }
-    .info-sheet-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
-    .info-sheet-sub { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; }
-    .time-slot-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 0.5px solid var(--border); }
+    .info-sheet-title { font-family: 'Fraunces', serif; font-size: 19px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .info-sheet-sub { font-size: 14px; color: var(--muted); margin-bottom: 1.25rem; }
+    .time-slot-row { display: flex; align-items: center; gap: 12px; padding: 12px 0; border-top: 0.5px solid var(--border); }
     .time-slot-row:first-of-type { border-top: none; padding-top: 0; }
-    .time-slot-dot { width: 8px; height: 8px; border-radius: 50%; background: #bbb; flex-shrink: 0; }
-    .time-slot-text { font-size: 14px; font-weight: 500; color: var(--ink); }
-    .info-close-btn { width: 100%; padding: 13px; background: var(--bg); color: var(--ink); border: 0.5px solid var(--border); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 1rem; }
+    .time-slot-dot { width: 9px; height: 9px; border-radius: 50%; background: #bbb; flex-shrink: 0; }
+    .time-slot-text { font-size: 16px; font-weight: 500; color: var(--ink); }
+    .info-close-btn { width: 100%; padding: 14px; background: var(--bg); color: var(--ink); border: 0.5px solid var(--border); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 1rem; }
+    .dash-view { display: none; padding: 1.25rem; padding-bottom: 5rem; }
+    .dash-view.active { display: block; }
     .dash-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 1rem; }
-    .stat { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 0.75rem 0.875rem; }
-    .stat-n { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--green); }
-    .stat-l { font-size: 11px; color: var(--muted); margin-top: 1px; }
-    .filters { display: flex; gap: 6px; margin-bottom: 0.875rem; overflow-x: auto; padding-bottom: 2px; }
-    .chip { padding: 6px 14px; border: 0.5px solid var(--border); border-radius: 20px; background: #fff; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
+    .stat { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 0.875rem 1rem; }
+    .stat-n { font-family: 'Fraunces', serif; font-size: 26px; font-weight: 500; color: var(--green); }
+    .stat-l { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .filters { display: flex; gap: 8px; margin-bottom: 1rem; overflow-x: auto; padding-bottom: 2px; }
+    .chip { padding: 8px 16px; border: 0.5px solid var(--border); border-radius: 20px; background: #fff; font-size: 14px; font-weight: 500; color: var(--muted); cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
     .chip.on { background: var(--green); color: #fff; border-color: var(--green); }
-    .booking-list { display: flex; flex-direction: column; gap: 8px; }
-    .bk { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
-    .bk-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 5px; }
-    .bk-name { font-weight: 500; font-size: 15px; }
-    .bk-contact { font-size: 11px; color: var(--muted); text-align: right; max-width: 120px; word-break: break-all; }
-    .bk-dt { font-size: 12px; font-weight: 500; color: var(--green); margin-bottom: 4px; display: flex; align-items: center; gap: 4px; }
-    .bk-meta { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; margin-bottom: 4px; }
-    .badge { display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px; border-radius: 20px; font-size: 11px; font-weight: 500; }
+    .booking-list { display: flex; flex-direction: column; gap: 10px; }
+    .bk { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; }
+    .bk-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+    .bk-name { font-weight: 500; font-size: 17px; }
+    .bk-contact { font-size: 13px; color: var(--muted); text-align: right; max-width: 130px; word-break: break-all; }
+    .bk-dt { font-size: 14px; font-weight: 500; color: var(--green); margin-bottom: 5px; display: flex; align-items: center; gap: 5px; }
+    .bk-meta { display: flex; gap: 7px; flex-wrap: wrap; align-items: center; margin-bottom: 5px; }
+    .badge { display: inline-flex; align-items: center; gap: 3px; padding: 4px 10px; border-radius: 20px; font-size: 13px; font-weight: 500; }
     .b-job { background: var(--green-light); color: #2d5a3d; }
     .b-earn { background: var(--gold-light); color: #7a5800; }
     .b-done { background: #e8e8e6; color: #555; }
     .b-new { background: #e8f0fb; color: #1a4a8a; }
-    .bk-addr { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 3px; }
-    .bk-note { font-size: 12px; color: var(--muted); border-top: 0.5px solid var(--border); padding-top: 7px; margin-top: 7px; line-height: 1.5; }
-    .bk-actions { display: flex; gap: 6px; margin-top: 8px; }
-    .act { padding: 7px 13px; border-radius: 8px; font-size: 12px; font-weight: 500; border: 0.5px solid var(--border); background: #fff; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-tap-highlight-color: transparent; }
+    .bk-addr { font-size: 14px; color: var(--muted); display: flex; align-items: center; gap: 4px; }
+    .bk-note { font-size: 13px; color: var(--muted); border-top: 0.5px solid var(--border); padding-top: 8px; margin-top: 8px; line-height: 1.5; }
+    .bk-actions { display: flex; gap: 8px; margin-top: 10px; }
+    .act { padding: 9px 16px; border-radius: 8px; font-size: 14px; font-weight: 500; border: 0.5px solid var(--border); background: #fff; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-tap-highlight-color: transparent; }
     .act.primary { background: var(--green); color: #fff; border-color: var(--green); }
-    .empty { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 13px; }
-    .empty i { font-size: 30px; display: block; margin-bottom: 0.75rem; color: #ccc; }
+    .empty { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 15px; }
+    .empty i { font-size: 32px; display: block; margin-bottom: 0.875rem; color: #ccc; }
   </style>
 </head>
 <body>
 
-<div class="header">
-  <div class="header-avatar">🌲</div>
-  <h1>Big Peter's Odd Jobs</h1>
-  <p class="tagline">Need a hand? Book a time and I'll be there.</p>
-  <div class="header-pills">
-    <span class="pill"><i class="ti ti-map-pin"></i>Stetson Road</span>
-    <span class="pill"><i class="ti ti-clock"></i>$10 / hour</span>
-  </div>
-</div>
-
-<div class="tab-bar">
-  <button class="tab active" onclick="go('book',this)">Book a job</button>
-  <button class="tab" onclick="go('cal',this)">Calendar</button>
-</div>
+<div class="confirm-wrap" id="confirm"></div>
 
 <button class="fab" id="fab" onclick="openPin()" aria-label="My bookings">
   <i class="ti ti-clipboard-list"></i>
 </button>
 
-<div class="view active" id="view-book">
-  <div class="confirm-wrap" id="confirm"></div>
-  <div class="card">
-    <div class="section-label">Your info</div>
-    <div class="field"><label>Your name</label><input type="text" id="b-name" placeholder="e.g. Maria G." autocomplete="name" /></div>
-    <div class="field"><label>Address or landmark</label><input type="text" id="b-addr" placeholder="e.g. Red barn past the creek" /></div>
-    <div class="field"><label>Phone or email</label><input type="text" id="b-contact" placeholder="555-0100 or you@email.com" autocomplete="email" /></div>
-  </div>
-  <div class="card">
-    <div class="section-label">What do you need?</div>
-    <div class="job-grid">
-      <button class="job-btn" data-job="Yard & leaves" onclick="selJob(this)"><i class="ti ti-leaf"></i>Yard & leaves</button>
-      <button class="job-btn" data-job="Firewood stacking" onclick="selJob(this)"><i class="ti ti-flame"></i>Firewood stacking</button>
-      <button class="job-btn" data-job="Dog walking" onclick="selJob(this)"><i class="ti ti-paw"></i>Dog walking</button>
-      <button class="job-btn" data-job="Kid's helper" onclick="selJob(this)"><i class="ti ti-mood-smile"></i>Kid's helper</button>
-      <button class="job-btn" data-job="Car wash" onclick="selJob(this)"><i class="ti ti-car"></i>Car wash</button>
-      <button class="job-btn" data-job="General help" onclick="selJob(this)"><i class="ti ti-tool"></i>General help</button>
+<div id="main-page">
+  <div class="header">
+    <div class="payment-badge">Payment due after job is done</div>
+    <div class="header-avatar">🌲</div>
+    <h1>Big Peter's Odd Jobs</h1>
+    <p class="tagline">Need a hand? Book a time and I'll be there.</p>
+    <div class="header-pills">
+      <span class="pill"><i class="ti ti-map-pin"></i>Stetson Road</span>
+      <span class="pill"><i class="ti ti-clock"></i>$10 / hour</span>
     </div>
   </div>
-  <div class="card">
-    <div class="section-label">Schedule</div>
-    <div class="field-row">
-      <div class="field"><label>Date</label><input type="date" id="b-date" /></div>
-      <div class="field"><label>Start time</label><input type="time" id="b-time" value="09:00" /></div>
+
+  <div class="page">
+    <div class="card">
+      <div class="section-label">Your info</div>
+      <div class="field"><label>Your name</label><input type="text" id="b-name" placeholder="e.g. Maria G." autocomplete="name" /></div>
+      <div class="field"><label>Address or landmark</label><input type="text" id="b-addr" placeholder="e.g. Red barn past the creek" /></div>
+      <div class="field"><label>Phone or email</label><input type="text" id="b-contact" placeholder="555-0100 or you@email.com" autocomplete="email" /></div>
     </div>
-    <div class="field">
-      <label>How many hours?</label>
-      <select id="b-hours">
-        <option value="1">1 hour — $10</option>
-        <option value="2">2 hours — $20</option>
-        <option value="3">3 hours — $30</option>
-        <option value="4">4 hours — $40</option>
-        <option value="5">5 hours — $50</option>
-      </select>
-      <div class="rate-note">$10 per hour · paid same day</div>
+
+    <div class="card">
+      <div class="section-label">What do you need?</div>
+      <div class="job-grid">
+        <button class="job-btn" data-job="Yard & leaves" onclick="selJob(this)"><i class="ti ti-leaf"></i>Yard & leaves</button>
+        <button class="job-btn" data-job="Firewood stacking" onclick="selJob(this)"><i class="ti ti-flame"></i>Firewood stacking</button>
+        <button class="job-btn" data-job="Dog walking" onclick="selJob(this)"><i class="ti ti-paw"></i>Dog walking</button>
+        <button class="job-btn" data-job="Kid's helper" onclick="selJob(this)"><i class="ti ti-mood-smile"></i>Kid's helper</button>
+        <button class="job-btn" data-job="Car wash" onclick="selJob(this)"><i class="ti ti-car"></i>Car wash</button>
+        <button class="job-btn" data-job="General help" onclick="selJob(this)"><i class="ti ti-tool"></i>General help</button>
+      </div>
     </div>
-    <div class="field">
-      <label>Extra details (optional)</label>
-      <textarea id="b-note" placeholder="Gate code, pets, anything helpful..."></textarea>
+
+    <div class="card">
+      <div class="section-label">Schedule</div>
+      <div class="field-row">
+        <div class="field"><label>Date</label><input type="date" id="b-date" /></div>
+        <div class="field"><label>Start time</label><input type="time" id="b-time" value="09:00" /></div>
+      </div>
+      <div class="field">
+        <label>How many hours?</label>
+        <select id="b-hours">
+          <option value="1">1 hour — $10</option>
+          <option value="2">2 hours — $20</option>
+          <option value="3">3 hours — $30</option>
+          <option value="4">4 hours — $40</option>
+          <option value="5">5 hours — $50</option>
+        </select>
+        <div class="rate-note">$10 per hour · paid same day</div>
+      </div>
+      <div class="field">
+        <label>Extra details (optional)</label>
+        <textarea id="b-note" placeholder="Gate code, pets, anything helpful..."></textarea>
+      </div>
+    </div>
+
+    <button class="book-btn" onclick="submitBooking()">Request this job</button>
+
+    <div class="section-divider">Availability</div>
+    <div class="card">
+      <div class="cal-top"><div class="cal-month-label">June 2026</div></div>
+      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px">
+        <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
+        <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+      </div>
+      <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"></div>
+      <div class="cal-legend">
+        <div class="leg"><div class="leg-box" style="background:#fff;border:0.5px solid #ccc"></div>Available</div>
+        <div class="leg"><div class="leg-box" style="background:#e0e0de;border:0.5px solid #bbb"></div>Booked</div>
+        <div class="leg"><div class="leg-box" style="background:#f0ede9;opacity:0.5"></div>Outside range</div>
+      </div>
     </div>
   </div>
-  <button class="book-btn" onclick="submitBooking()">Request this job</button>
 </div>
 
-<div class="view" id="view-cal">
-  <div class="card">
-    <div class="cal-top"><div class="cal-month-label">June 2026</div></div>
-    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px">
-      <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
-      <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+<div class="dash-view" id="dash-page">
+  <div class="header" style="text-align:left;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
+    <button onclick="showMain()" style="background:none;border:none;cursor:pointer;color:#fff;font-size:24px;padding:0;line-height:1;display:flex;align-items:center" aria-label="Back"><i class="ti ti-arrow-left"></i></button>
+    <span style="font-family:'Fraunces',serif;font-size:22px;font-weight:500;color:#fff">My bookings</span>
+  </div>
+  <div style="padding:1.25rem;padding-bottom:5rem">
+    <div class="dash-stats">
+      <div class="stat"><div class="stat-n" id="st-jobs">0</div><div class="stat-l">Bookings</div></div>
+      <div class="stat"><div class="stat-n" id="st-hrs">0</div><div class="stat-l">Hours</div></div>
+      <div class="stat"><div class="stat-n" id="st-earn" style="color:#b8860b">$0</div><div class="stat-l">Pay</div></div>
     </div>
-    <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"></div>
-    <div class="cal-legend">
-      <div class="leg"><div class="leg-box" style="background:#fff;border:0.5px solid #ccc"></div>Available</div>
-      <div class="leg"><div class="leg-box" style="background:#e0e0de;border:0.5px solid #bbb"></div>Booked</div>
-      <div class="leg"><div class="leg-box" style="background:#f0ede9;opacity:0.5"></div>Outside range</div>
+    <div class="filters">
+      <button class="chip on" onclick="setF('all',this)">All</button>
+      <button class="chip" onclick="setF('new',this)">New</button>
+      <button class="chip" onclick="setF('done',this)">Done</button>
     </div>
+    <div class="booking-list" id="bklist"></div>
   </div>
 </div>
 
-<div class="view" id="view-dash">
-  <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.25rem">
-    <button onclick="go('book',document.querySelector('.tab'))" style="background:none;border:none;cursor:pointer;color:var(--green);font-size:22px;padding:0;line-height:1;display:flex;align-items:center" aria-label="Back"><i class="ti ti-arrow-left"></i></button>
-    <span style="font-family:'Fraunces',serif;font-size:20px;font-weight:500">My bookings</span>
-  </div>
-  <div class="dash-stats">
-    <div class="stat"><div class="stat-n" id="st-jobs">0</div><div class="stat-l">Bookings</div></div>
-    <div class="stat"><div class="stat-n" id="st-hrs">0</div><div class="stat-l">Hours</div></div>
-    <div class="stat"><div class="stat-n" id="st-earn" style="color:#b8860b">$0</div><div class="stat-l">Pay</div></div>
-  </div>
-  <div class="filters">
-    <button class="chip on" onclick="setF('all',this)">All</button>
-    <button class="chip" onclick="setF('new',this)">New</button>
-    <button class="chip" onclick="setF('done',this)">Done</button>
-  </div>
-  <div class="booking-list" id="bklist"></div>
-</div>
-
-<!-- PIN SHEET -->
 <div class="sheet-backdrop" id="pin-backdrop">
   <div class="pin-sheet">
     <div class="sheet-handle"></div>
@@ -265,7 +267,6 @@
   </div>
 </div>
 
-<!-- BOOKING SHEET -->
 <div class="sheet-backdrop" id="sheet-backdrop" onclick="closeSheet(event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
@@ -285,7 +286,6 @@
   </div>
 </div>
 
-<!-- INFO SHEET -->
 <div class="sheet-backdrop" id="info-backdrop" onclick="closeInfo(event)">
   <div class="info-sheet">
     <div class="sheet-handle"></div>
@@ -302,57 +302,57 @@
   var pinLocked = false;
 
   function openPin() {
-    pinEntry = '';
-    pinLocked = false;
+    pinEntry = ''; pinLocked = false;
     updatePinDots();
     document.getElementById('pin-err').classList.remove('show');
     document.getElementById('pin-backdrop').classList.add('show');
   }
-
   function closePin() {
     document.getElementById('pin-backdrop').classList.remove('show');
-    pinEntry = '';
-    pinLocked = false;
+    pinEntry = ''; pinLocked = false;
     updatePinDots();
     document.getElementById('pin-err').classList.remove('show');
   }
-
   function pinKey(k) {
-    if (pinLocked) return;
-    if (pinEntry.length >= 4) return;
+    if (pinLocked || pinEntry.length >= 4) return;
     document.getElementById('pin-err').classList.remove('show');
     pinEntry += k;
     updatePinDots();
     if (pinEntry.length === 4) {
       pinLocked = true;
       setTimeout(function() {
-        if (pinEntry === CORRECT_PIN) {
-          closePin();
-          go('dash', null);
-        } else {
+        if (pinEntry === CORRECT_PIN) { closePin(); showDash(); }
+        else {
           document.getElementById('pin-err').classList.add('show');
-          pinEntry = '';
-          pinLocked = false;
-          updatePinDots();
+          pinEntry = ''; pinLocked = false; updatePinDots();
         }
       }, 300);
     }
   }
-
   function pinDel() {
-    if (pinLocked) return;
-    if (pinEntry.length === 0) return;
+    if (pinLocked || pinEntry.length === 0) return;
     pinEntry = pinEntry.slice(0, -1);
     document.getElementById('pin-err').classList.remove('show');
     updatePinDots();
   }
-
   function updatePinDots() {
     for (var i = 0; i < 4; i++) {
       var dot = document.getElementById('pd' + i);
-      if (i < pinEntry.length) { dot.classList.add('filled'); }
-      else { dot.classList.remove('filled'); }
+      if (i < pinEntry.length) dot.classList.add('filled');
+      else dot.classList.remove('filled');
     }
+  }
+
+  function showDash() {
+    document.getElementById('main-page').style.display = 'none';
+    document.getElementById('dash-page').classList.add('active');
+    document.getElementById('fab').classList.add('hidden');
+    renderDash();
+  }
+  function showMain() {
+    document.getElementById('main-page').style.display = 'block';
+    document.getElementById('dash-page').classList.remove('active');
+    document.getElementById('fab').classList.remove('hidden');
   }
 
   var bookings = [];
@@ -367,16 +367,6 @@
   document.getElementById('b-date').min = AVAIL_START;
   document.getElementById('b-date').max = AVAIL_END;
 
-  function go(v, btn) {
-    document.querySelectorAll('.view').forEach(function(el) { el.classList.remove('active'); });
-    document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
-    document.getElementById('view-' + v).classList.add('active');
-    if (btn) btn.classList.add('active');
-    document.getElementById('fab').classList.toggle('hidden', v === 'dash');
-    if (v === 'dash') renderDash();
-    if (v === 'cal') renderCal();
-  }
-
   function selJob(btn) {
     document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
     btn.classList.add('sel'); selJobEl = btn;
@@ -387,7 +377,6 @@
     var p = t.split(':').map(Number);
     return (p[0] % 12 || 12) + (p[1] ? ':' + String(p[1]).padStart(2,'0') : '') + (p[0] >= 12 ? 'pm' : 'am');
   }
-
   function fmtDateShort(ds) { return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}); }
   function fmtDateLong(ds) { return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }
   function timeToMins(t) { var p=t.split(':').map(Number); return p[0]*60+p[1]; }
@@ -412,14 +401,30 @@
     if(overlaps(date,time,endTime)){alert('That time overlaps with an existing booking. Please choose another time.');return;}
     var job=selJobEl.dataset.job;
     bookings.unshift({id:Date.now(),name:name,addr:addr,contact:contact,job:job,date:date,time:time,endTime:endTime,hours:hours,earn:hours*10,note:note,done:false});
+    fetch('https://formspree.io/f/mgobaekl', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        Name: name,
+        Address: addr,
+        'Phone or Email': contact,
+        Job: job,
+        Date: fmtDateShort(date),
+        Time: fmtTime(time) + '–' + fmtTime(endTime),
+        Hours: hours,
+        Pay: '$' + (hours * 10),
+        Notes: note || 'None'
+      })
+    });
     var c=document.getElementById('confirm');
-    c.innerHTML='<h3>Request sent!</h3><p>Thanks '+name+'! Big Peter will confirm soon. <strong>'+job+'</strong> on <strong>'+fmtDateShort(date)+'</strong>, '+fmtTime(time)+'–'+fmtTime(endTime)+'.</p>';
-    c.classList.add('show'); setTimeout(function(){c.classList.remove('show');},5000);
+    c.innerHTML='<h3>Thank you for booking with me!</h3><p>I will get back to you shortly. Your request for <strong>'+job+'</strong> on <strong>'+fmtDateShort(date)+'</strong>, '+fmtTime(time)+'–'+fmtTime(endTime)+' has been received!</p>';
+    c.classList.add('show'); setTimeout(function(){c.classList.remove('show');},4000);
     document.getElementById('b-name').value=''; document.getElementById('b-addr').value='';
     document.getElementById('b-contact').value=''; document.getElementById('b-note').value='';
     document.getElementById('b-hours').value='1'; document.getElementById('b-time').value='09:00';
     document.getElementById('b-date').value=todayStr>=AVAIL_START?todayStr:AVAIL_START;
     document.querySelectorAll('.job-btn').forEach(function(b){b.classList.remove('sel');}); selJobEl=null;
+    renderCal();
   }
 
   function renderCal() {
@@ -496,9 +501,9 @@
     list.innerHTML=filtered.map(function(b){
       return '<div class="bk" style="'+(b.done?'opacity:0.5':'')+'">'+
         '<div class="bk-top"><div class="bk-name">'+b.name+'</div><div class="bk-contact">'+(b.contact||'')+'</div></div>'+
-        '<div class="bk-dt"><i class="ti ti-calendar" style="font-size:13px"></i>'+fmtDateShort(b.date)+', '+fmtTime(b.time)+(b.endTime?'–'+fmtTime(b.endTime):'')+'</div>'+
+        '<div class="bk-dt"><i class="ti ti-calendar" style="font-size:14px"></i>'+fmtDateShort(b.date)+', '+fmtTime(b.time)+(b.endTime?'–'+fmtTime(b.endTime):'')+'</div>'+
         '<div class="bk-meta"><span class="badge b-job">'+b.job+'</span><span class="badge b-earn">$'+b.earn+'</span>'+(b.done?'<span class="badge b-done">Done</span>':'<span class="badge b-new">New</span>')+'</div>'+
-        '<div class="bk-addr"><i class="ti ti-map-pin" style="font-size:12px"></i>'+b.addr+'</div>'+
+        '<div class="bk-addr"><i class="ti ti-map-pin" style="font-size:13px"></i>'+b.addr+'</div>'+
         (b.note?'<div class="bk-note">'+b.note+'</div>':'')+
         '<div class="bk-actions"><button class="act primary" onclick="markDone('+b.id+')">'+(b.done?'Reopen':'Mark done')+'</button><button class="act" onclick="del('+b.id+')">Remove</button></div>'+
         '</div>';
