@@ -17,124 +17,61 @@
       --card: #fff; --bg: #f6f4f0; --radius: 14px;
     }
     html, body { height: 100%; }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      max-width: 430px;
-      margin: 0 auto;
-      min-height: 100vh;
-    }
-
-    /* HEADER */
+    body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); max-width: 430px; margin: 0 auto; min-height: 100vh; }
     .header { background: var(--green); padding: 1.5rem 1.25rem 1.25rem; text-align: center; }
-    .header-avatar {
-      width: 48px; height: 48px; border-radius: 50%; background: #5a9e74;
-      margin: 0 auto 0.6rem; display: flex; align-items: center;
-      justify-content: center; font-size: 22px; border: 2px solid rgba(255,255,255,0.3);
-    }
+    .header-avatar { width: 48px; height: 48px; border-radius: 50%; background: #5a9e74; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; font-size: 22px; border: 2px solid rgba(255,255,255,0.3); }
     .header h1 { font-family: 'Fraunces', serif; color: #fff; font-size: 21px; font-weight: 600; margin-bottom: 3px; }
     .header .tagline { color: rgba(255,255,255,0.72); font-size: 12px; line-height: 1.5; margin: 0 auto 0.9rem; }
     .header-pills { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
-    .pill {
-      background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92);
-      font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px;
-      display: flex; align-items: center; gap: 4px;
-    }
-
-    /* TABS */
-    .tab-bar {
-      background: var(--card); border-bottom: 0.5px solid var(--border);
-      display: flex; position: sticky; top: 0; z-index: 10;
-    }
-    .tab {
-      flex: 1; padding: 13px 4px; text-align: center; font-size: 13px;
-      font-weight: 500; color: var(--muted); border: none; background: transparent;
-      cursor: pointer; border-bottom: 2px solid transparent;
-      transition: all 0.15s; font-family: 'DM Sans', sans-serif;
-    }
+    .pill { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92); font-size: 11px; font-weight: 500; padding: 3px 10px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
+    .tab-bar { background: var(--card); border-bottom: 0.5px solid var(--border); display: flex; position: sticky; top: 0; z-index: 10; }
+    .tab { flex: 1; padding: 13px 4px; text-align: center; font-size: 13px; font-weight: 500; color: var(--muted); border: none; background: transparent; cursor: pointer; border-bottom: 2px solid transparent; transition: all 0.15s; font-family: 'DM Sans', sans-serif; }
     .tab.active { color: var(--green); border-bottom-color: var(--green); }
-
-    /* VIEWS */
     .view { display: none; padding: 1.25rem; padding-bottom: 5rem; }
     .view.active { display: block; }
-
-    /* FORM */
-    .section-label {
-      font-size: 10px; font-weight: 500; letter-spacing: 0.07em;
-      color: var(--muted); text-transform: uppercase; margin-bottom: 0.65rem;
-    }
-    .card {
-      background: var(--card); border: 0.5px solid var(--border);
-      border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem;
-    }
+    .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.07em; color: var(--muted); text-transform: uppercase; margin-bottom: 0.65rem; }
+    .card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem; }
     .job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-    .job-btn {
-      padding: 13px 10px; border: 0.5px solid var(--border); border-radius: 10px;
-      background: #fff; cursor: pointer; font-size: 14px; font-weight: 500;
-      color: #1a1a18; text-align: left; transition: all 0.15s;
-      display: flex; align-items: center; gap: 9px;
-      font-family: 'DM Sans', sans-serif; line-height: 1.3;
-      -webkit-tap-highlight-color: transparent;
-    }
+    .job-btn { padding: 13px 10px; border: 0.5px solid var(--border); border-radius: 10px; background: #fff; cursor: pointer; font-size: 14px; font-weight: 500; color: #1a1a18; text-align: left; transition: all 0.15s; display: flex; align-items: center; gap: 9px; font-family: 'DM Sans', sans-serif; line-height: 1.3; -webkit-tap-highlight-color: transparent; }
     .job-btn i { font-size: 19px; color: #999; flex-shrink: 0; }
     .job-btn.sel { border-color: var(--green); background: var(--green-light); border-width: 1.5px; }
     .job-btn.sel i { color: var(--green); }
-
     .field { margin-bottom: 0.9rem; }
     .field:last-child { margin-bottom: 0; }
     .field label { display: block; font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 5px; }
-    .field input, .field textarea, .field select {
-      width: 100%; padding: 11px 12px; border: 0.5px solid var(--border);
-      border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px;
-      background: #fff; color: var(--ink); outline: none;
-      -webkit-appearance: none; appearance: none;
-    }
-    .field input:focus, .field textarea:focus, .field select:focus {
-      border-color: var(--green-mid); border-width: 1px;
-    }
+    .field input, .field textarea, .field select { width: 100%; padding: 11px 12px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; background: #fff; color: var(--ink); outline: none; -webkit-appearance: none; appearance: none; }
+    .field input:focus, .field textarea:focus, .field select:focus { border-color: var(--green-mid); border-width: 1px; }
     .field textarea { resize: none; height: 80px; line-height: 1.5; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .rate-note { font-size: 11px; color: var(--muted); margin-top: 4px; }
-
-    .book-btn {
-      width: 100%; padding: 15px; background: #fff; color: #1a1a18;
-      border: 2px solid #1a1a18; border-radius: 12px;
-      font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500;
-      cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent;
-    }
-
-    .confirm-wrap {
-      display: none; background: var(--green-light); border: 1px solid #7ab89a;
-      border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem;
-    }
+    .book-btn { width: 100%; padding: 15px; background: #fff; color: #1a1a18; border: 2px solid #1a1a18; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent; }
+    .confirm-wrap { display: none; background: var(--green-light); border: 1px solid #7ab89a; border-radius: var(--radius); padding: 1.1rem; margin-bottom: 0.875rem; }
     .confirm-wrap.show { display: block; }
     .confirm-wrap h3 { font-family: 'Fraunces', serif; color: var(--green); font-size: 16px; margin-bottom: 5px; }
     .confirm-wrap p { font-size: 13px; color: #2d5a3d; line-height: 1.6; }
-
-    /* FAB */
-    .fab {
-      position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px;
-      background: none; border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: #1a1a18; font-size: 20px; z-index: 20;
-      -webkit-tap-highlight-color: transparent; padding: 0;
-    }
+    .fab { position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1a1a18; font-size: 20px; z-index: 20; -webkit-tap-highlight-color: transparent; padding: 0; }
     .fab.hidden { display: none; }
-
-    /* CALENDAR */
+    .sheet-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; align-items: flex-end; justify-content: center; }
+    .sheet-backdrop.show { display: flex; }
+    .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: #ddd; margin: 0 auto 1rem; }
+    .pin-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px; }
+    .pin-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .pin-sub { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; }
+    .pin-dots { display: flex; gap: 12px; justify-content: center; margin-bottom: 1.5rem; }
+    .pin-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #ccc; background: #fff; transition: all 0.15s; }
+    .pin-dot.filled { background: var(--ink); border-color: var(--ink); }
+    .pin-err { font-size: 12px; color: #c0392b; padding: 8px 10px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; text-align: center; margin-bottom: 1rem; }
+    .pin-err.show { display: block; }
+    .pin-keypad { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0.75rem; }
+    .pin-key { padding: 18px; border: 0.5px solid var(--border); border-radius: 12px; background: #fff; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--ink); cursor: pointer; text-align: center; -webkit-tap-highlight-color: transparent; transition: background 0.1s; user-select: none; }
+    .pin-key:active { background: var(--bg); }
+    .pin-key.del { font-family: 'DM Sans', sans-serif; font-size: 16px; color: var(--muted); }
+    .pin-key.empty { border-color: transparent; background: transparent; pointer-events: none; }
+    .pin-cancel { width: 100%; padding: 12px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; }
     .cal-top { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
     .cal-month-label { font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; color: var(--ink); }
-    .cal-dow {
-      text-align: center; font-size: 10px; font-weight: 500; color: var(--muted);
-      padding: 3px 0; text-transform: uppercase; letter-spacing: 0.04em;
-    }
-    .cal-day {
-      height: 52px; border-radius: 10px; border: 0.5px solid var(--border);
-      background: #fff; display: flex; flex-direction: column;
-      align-items: center; justify-content: center; cursor: default;
-      -webkit-tap-highlight-color: transparent; position: relative;
-    }
+    .cal-dow { text-align: center; font-size: 10px; font-weight: 500; color: var(--muted); padding: 3px 0; text-transform: uppercase; letter-spacing: 0.04em; }
+    .cal-day { height: 52px; border-radius: 10px; border: 0.5px solid var(--border); background: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; cursor: default; -webkit-tap-highlight-color: transparent; position: relative; }
     .cal-day.empty { background: transparent; border-color: transparent; }
     .cal-day.outside { background: #f0ede9; border-color: transparent; opacity: 0.4; }
     .cal-day.available { cursor: pointer; }
@@ -143,93 +80,39 @@
     .cal-day-num { font-size: 13px; font-weight: 500; color: var(--ink); line-height: 1; }
     .cal-day.outside .cal-day-num { color: #bbb; }
     .cal-day.booked .cal-day-num { color: #555; }
-    .day-q {
-      position: absolute; top: 4px; right: 4px; width: 14px; height: 14px;
-      border-radius: 50%; background: var(--green); border: none; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; font-size: 9px; font-weight: 700;
-      font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent;
-      line-height: 1; padding: 0;
-    }
+    .day-q { position: absolute; top: 4px; right: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--green); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 9px; font-weight: 700; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; line-height: 1; padding: 0; }
     .cal-legend { display: flex; gap: 12px; margin-top: 0.875rem; flex-wrap: wrap; }
     .leg { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--muted); }
     .leg-box { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
-
-    /* SHEETS */
-    .sheet-backdrop {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,0.35); z-index: 100;
-      align-items: flex-end; justify-content: center;
-    }
-    .sheet-backdrop.show { display: flex; }
-    .sheet {
-      background: #fff; border-radius: 20px 20px 0 0;
-      padding: 1.25rem 1.25rem 2rem; width: 100%; max-width: 430px;
-    }
-    .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: #ddd; margin: 0 auto 1rem; }
+    .sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2rem; width: 100%; max-width: 430px; }
     .sheet-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
     .sheet-date { font-size: 13px; color: var(--muted); margin-bottom: 1.1rem; }
     .sheet-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1rem; }
     .sheet-field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
-    .sheet-field input {
-      width: 100%; padding: 11px 10px; border: 0.5px solid var(--border);
-      border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px;
-      color: var(--ink); background: #fff; outline: none; -webkit-appearance: none;
-    }
+    .sheet-field input { width: 100%; padding: 11px 10px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
     .sheet-field input:focus { border-color: var(--green-mid); }
-    .sheet-err {
-      font-size: 12px; color: #c0392b; margin-bottom: 0.75rem;
-      padding: 8px 10px; background: #fdeaea; border-radius: 8px;
-      display: none; line-height: 1.5;
-    }
+    .sheet-err { font-size: 12px; color: #c0392b; margin-bottom: 0.75rem; padding: 8px 10px; background: #fdeaea; border-radius: 8px; display: none; line-height: 1.5; }
     .sheet-err.show { display: block; }
     .sheet-name-field { margin-bottom: 0.75rem; }
     .sheet-name-field label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
-    .sheet-name-field input {
-      width: 100%; padding: 11px 10px; border: 0.5px solid var(--border);
-      border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px;
-      color: var(--ink); background: #fff; outline: none; -webkit-appearance: none;
-    }
+    .sheet-name-field input { width: 100%; padding: 11px 10px; border: 0.5px solid var(--border); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: var(--ink); background: #fff; outline: none; -webkit-appearance: none; }
     .sheet-name-field input:focus { border-color: var(--green-mid); }
-    .sheet-btn {
-      width: 100%; padding: 14px; background: var(--green); color: #fff;
-      border: none; border-radius: 12px; font-family: 'Fraunces', serif;
-      font-size: 16px; font-weight: 500; cursor: pointer;
-    }
-    .sheet-cancel {
-      width: 100%; padding: 12px; background: transparent; color: var(--muted);
-      border: none; font-family: 'DM Sans', sans-serif; font-size: 14px;
-      cursor: pointer; margin-top: 6px;
-    }
-    .info-sheet {
-      background: #fff; border-radius: 20px 20px 0 0;
-      padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px;
-    }
+    .sheet-btn { width: 100%; padding: 14px; background: var(--green); color: #fff; border: none; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 16px; font-weight: 500; cursor: pointer; }
+    .sheet-cancel { width: 100%; padding: 12px; background: transparent; color: var(--muted); border: none; font-family: 'DM Sans', sans-serif; font-size: 14px; cursor: pointer; margin-top: 6px; }
+    .info-sheet { background: #fff; border-radius: 20px 20px 0 0; padding: 1.25rem 1.25rem 2.5rem; width: 100%; max-width: 430px; }
     .info-sheet-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
     .info-sheet-sub { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; }
     .time-slot-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 0.5px solid var(--border); }
     .time-slot-row:first-of-type { border-top: none; padding-top: 0; }
     .time-slot-dot { width: 8px; height: 8px; border-radius: 50%; background: #bbb; flex-shrink: 0; }
     .time-slot-text { font-size: 14px; font-weight: 500; color: var(--ink); }
-    .info-close-btn {
-      width: 100%; padding: 13px; background: var(--bg); color: var(--ink);
-      border: 0.5px solid var(--border); border-radius: 12px;
-      font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
-      cursor: pointer; margin-top: 1rem;
-    }
-
-    /* DASHBOARD */
+    .info-close-btn { width: 100%; padding: 13px; background: var(--bg); color: var(--ink); border: 0.5px solid var(--border); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer; margin-top: 1rem; }
     .dash-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 1rem; }
     .stat { background: var(--card); border: 0.5px solid var(--border); border-radius: 10px; padding: 0.75rem 0.875rem; }
     .stat-n { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; color: var(--green); }
     .stat-l { font-size: 11px; color: var(--muted); margin-top: 1px; }
     .filters { display: flex; gap: 6px; margin-bottom: 0.875rem; overflow-x: auto; padding-bottom: 2px; }
-    .chip {
-      padding: 6px 14px; border: 0.5px solid var(--border); border-radius: 20px;
-      background: #fff; font-size: 12px; font-weight: 500; color: var(--muted);
-      cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif;
-      -webkit-tap-highlight-color: transparent; flex-shrink: 0;
-    }
+    .chip { padding: 6px 14px; border: 0.5px solid var(--border); border-radius: 20px; background: #fff; font-size: 12px; font-weight: 500; color: var(--muted); cursor: pointer; white-space: nowrap; font-family: 'DM Sans', sans-serif; -webkit-tap-highlight-color: transparent; flex-shrink: 0; }
     .chip.on { background: var(--green); color: #fff; border-color: var(--green); }
     .booking-list { display: flex; flex-direction: column; gap: 8px; }
     .bk { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1rem 1.1rem; }
@@ -246,12 +129,7 @@
     .bk-addr { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 3px; }
     .bk-note { font-size: 12px; color: var(--muted); border-top: 0.5px solid var(--border); padding-top: 7px; margin-top: 7px; line-height: 1.5; }
     .bk-actions { display: flex; gap: 6px; margin-top: 8px; }
-    .act {
-      padding: 7px 13px; border-radius: 8px; font-size: 12px; font-weight: 500;
-      border: 0.5px solid var(--border); background: #fff; cursor: pointer;
-      font-family: 'DM Sans', sans-serif; color: var(--ink);
-      -webkit-tap-highlight-color: transparent;
-    }
+    .act { padding: 7px 13px; border-radius: 8px; font-size: 12px; font-weight: 500; border: 0.5px solid var(--border); background: #fff; cursor: pointer; font-family: 'DM Sans', sans-serif; color: var(--ink); -webkit-tap-highlight-color: transparent; }
     .act.primary { background: var(--green); color: #fff; border-color: var(--green); }
     .empty { text-align: center; padding: 2.5rem 1rem; color: var(--muted); font-size: 13px; }
     .empty i { font-size: 30px; display: block; margin-bottom: 0.75rem; color: #ccc; }
@@ -274,11 +152,10 @@
   <button class="tab" onclick="go('cal',this)">Calendar</button>
 </div>
 
-<button class="fab" id="fab" onclick="go('dash',null)" aria-label="My bookings">
+<button class="fab" id="fab" onclick="openPin()" aria-label="My bookings">
   <i class="ti ti-clipboard-list"></i>
 </button>
 
-<!-- BOOK -->
 <div class="view active" id="view-book">
   <div class="confirm-wrap" id="confirm"></div>
   <div class="card">
@@ -323,7 +200,6 @@
   <button class="book-btn" onclick="submitBooking()">Request this job</button>
 </div>
 
-<!-- CALENDAR -->
 <div class="view" id="view-cal">
   <div class="card">
     <div class="cal-top"><div class="cal-month-label">June 2026</div></div>
@@ -340,7 +216,6 @@
   </div>
 </div>
 
-<!-- DASHBOARD -->
 <div class="view" id="view-dash">
   <div style="display:flex;align-items:center;gap:10px;margin-bottom:1.25rem">
     <button onclick="go('book',document.querySelector('.tab'))" style="background:none;border:none;cursor:pointer;color:var(--green);font-size:22px;padding:0;line-height:1;display:flex;align-items:center" aria-label="Back"><i class="ti ti-arrow-left"></i></button>
@@ -357,6 +232,37 @@
     <button class="chip" onclick="setF('done',this)">Done</button>
   </div>
   <div class="booking-list" id="bklist"></div>
+</div>
+
+<!-- PIN SHEET -->
+<div class="sheet-backdrop" id="pin-backdrop">
+  <div class="pin-sheet">
+    <div class="sheet-handle"></div>
+    <div class="pin-title">Enter PIN</div>
+    <div class="pin-sub">This area is for Peter only.</div>
+    <div class="pin-dots">
+      <div class="pin-dot" id="pd0"></div>
+      <div class="pin-dot" id="pd1"></div>
+      <div class="pin-dot" id="pd2"></div>
+      <div class="pin-dot" id="pd3"></div>
+    </div>
+    <div class="pin-err" id="pin-err">You can't access this. Wrong PIN.</div>
+    <div class="pin-keypad">
+      <button class="pin-key" onclick="pinKey('1')">1</button>
+      <button class="pin-key" onclick="pinKey('2')">2</button>
+      <button class="pin-key" onclick="pinKey('3')">3</button>
+      <button class="pin-key" onclick="pinKey('4')">4</button>
+      <button class="pin-key" onclick="pinKey('5')">5</button>
+      <button class="pin-key" onclick="pinKey('6')">6</button>
+      <button class="pin-key" onclick="pinKey('7')">7</button>
+      <button class="pin-key" onclick="pinKey('8')">8</button>
+      <button class="pin-key" onclick="pinKey('9')">9</button>
+      <button class="pin-key empty"></button>
+      <button class="pin-key" onclick="pinKey('0')">0</button>
+      <button class="pin-key del" onclick="pinDel()">⌫</button>
+    </div>
+    <button class="pin-cancel" onclick="closePin()">Cancel</button>
+  </div>
 </div>
 
 <!-- BOOKING SHEET -->
@@ -391,22 +297,79 @@
 </div>
 
 <script>
-  let bookings = [];
-  let selJobEl = null;
-  let dashFilter = 'all';
-  let pendingDate = null;
+  var CORRECT_PIN = '1010';
+  var pinEntry = '';
+  var pinLocked = false;
 
-  const AVAIL_START = '2026-06-08';
-  const AVAIL_END = '2026-06-20';
-  const todayStr = new Date().toISOString().split('T')[0];
+  function openPin() {
+    pinEntry = '';
+    pinLocked = false;
+    updatePinDots();
+    document.getElementById('pin-err').classList.remove('show');
+    document.getElementById('pin-backdrop').classList.add('show');
+  }
+
+  function closePin() {
+    document.getElementById('pin-backdrop').classList.remove('show');
+    pinEntry = '';
+    pinLocked = false;
+    updatePinDots();
+    document.getElementById('pin-err').classList.remove('show');
+  }
+
+  function pinKey(k) {
+    if (pinLocked) return;
+    if (pinEntry.length >= 4) return;
+    document.getElementById('pin-err').classList.remove('show');
+    pinEntry += k;
+    updatePinDots();
+    if (pinEntry.length === 4) {
+      pinLocked = true;
+      setTimeout(function() {
+        if (pinEntry === CORRECT_PIN) {
+          closePin();
+          go('dash', null);
+        } else {
+          document.getElementById('pin-err').classList.add('show');
+          pinEntry = '';
+          pinLocked = false;
+          updatePinDots();
+        }
+      }, 300);
+    }
+  }
+
+  function pinDel() {
+    if (pinLocked) return;
+    if (pinEntry.length === 0) return;
+    pinEntry = pinEntry.slice(0, -1);
+    document.getElementById('pin-err').classList.remove('show');
+    updatePinDots();
+  }
+
+  function updatePinDots() {
+    for (var i = 0; i < 4; i++) {
+      var dot = document.getElementById('pd' + i);
+      if (i < pinEntry.length) { dot.classList.add('filled'); }
+      else { dot.classList.remove('filled'); }
+    }
+  }
+
+  var bookings = [];
+  var selJobEl = null;
+  var dashFilter = 'all';
+  var pendingDate = null;
+  var AVAIL_START = '2026-06-08';
+  var AVAIL_END = '2026-06-20';
+  var todayStr = new Date().toISOString().split('T')[0];
 
   document.getElementById('b-date').value = todayStr >= AVAIL_START ? todayStr : AVAIL_START;
   document.getElementById('b-date').min = AVAIL_START;
   document.getElementById('b-date').max = AVAIL_END;
 
   function go(v, btn) {
-    document.querySelectorAll('.view').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.view').forEach(function(el) { el.classList.remove('active'); });
+    document.querySelectorAll('.tab').forEach(function(el) { el.classList.remove('active'); });
     document.getElementById('view-' + v).classList.add('active');
     if (btn) btn.classList.add('active');
     document.getElementById('fab').classList.toggle('hidden', v === 'dash');
@@ -415,172 +378,132 @@
   }
 
   function selJob(btn) {
-    document.querySelectorAll('.job-btn').forEach(b => b.classList.remove('sel'));
-    btn.classList.add('sel');
-    selJobEl = btn;
+    document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
+    btn.classList.add('sel'); selJobEl = btn;
   }
 
   function fmtTime(t) {
     if (!t) return '';
-    const [h, m] = t.split(':').map(Number);
-    return (h % 12 || 12) + (m ? ':' + String(m).padStart(2, '0') : '') + (h >= 12 ? 'pm' : 'am');
+    var p = t.split(':').map(Number);
+    return (p[0] % 12 || 12) + (p[1] ? ':' + String(p[1]).padStart(2,'0') : '') + (p[0] >= 12 ? 'pm' : 'am');
   }
 
-  function fmtDateShort(ds) {
-    return new Date(ds + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
-  }
-
-  function fmtDateLong(ds) {
-    return new Date(ds + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
-  }
-
-  function timeToMins(t) { const [h, m] = t.split(':').map(Number); return h * 60 + m; }
-  function getActive(k) { return bookings.filter(b => b.date === k && !b.done); }
-  function hasAny(k) { return getActive(k).length > 0; }
-  function overlaps(k, from, to) {
-    const ns = timeToMins(from), ne = timeToMins(to);
-    return getActive(k).some(b => ns < timeToMins(b.endTime) && ne > timeToMins(b.time));
+  function fmtDateShort(ds) { return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'}); }
+  function fmtDateLong(ds) { return new Date(ds+'T12:00:00').toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric'}); }
+  function timeToMins(t) { var p=t.split(':').map(Number); return p[0]*60+p[1]; }
+  function getActive(k) { return bookings.filter(function(b){return b.date===k&&!b.done;}); }
+  function hasAny(k) { return getActive(k).length>0; }
+  function overlaps(k,from,to) {
+    var ns=timeToMins(from),ne=timeToMins(to);
+    return getActive(k).some(function(b){return ns<timeToMins(b.endTime)&&ne>timeToMins(b.time);});
   }
 
   function submitBooking() {
-    const name = document.getElementById('b-name').value.trim();
-    const addr = document.getElementById('b-addr').value.trim();
-    const contact = document.getElementById('b-contact').value.trim();
-    const date = document.getElementById('b-date').value;
-    const time = document.getElementById('b-time').value;
-    const hours = parseInt(document.getElementById('b-hours').value);
-    const note = document.getElementById('b-note').value.trim();
-    if (!selJobEl || !name || !addr || !date) { alert('Please fill in your info, pick a job, and choose a date.'); return; }
-    const em = timeToMins(time) + hours * 60;
-    const endTime = String(Math.floor(em / 60) % 24).padStart(2, '0') + ':' + String(em % 60).padStart(2, '0');
-    if (overlaps(date, time, endTime)) { alert('That time overlaps with an existing booking. Please choose another time.'); return; }
-    bookings.unshift({ id: Date.now(), name, addr, contact, job: selJobEl.dataset.job, date, time, endTime, hours, earn: hours * 10, note, done: false });
-    const c = document.getElementById('confirm');
-    c.innerHTML = `<h3>Request sent!</h3><p>Thanks ${name}! Big Peter will confirm soon. <strong>${selJobEl.dataset.job}</strong> on <strong>${fmtDateShort(date)}</strong>, ${fmtTime(time)}–${fmtTime(endTime)}.</p>`;
-    c.classList.add('show');
-    setTimeout(() => c.classList.remove('show'), 5000);
-    document.getElementById('b-name').value = '';
-    document.getElementById('b-addr').value = '';
-    document.getElementById('b-contact').value = '';
-    document.getElementById('b-note').value = '';
-    document.getElementById('b-hours').value = '1';
-    document.getElementById('b-time').value = '09:00';
-    document.getElementById('b-date').value = todayStr >= AVAIL_START ? todayStr : AVAIL_START;
-    document.querySelectorAll('.job-btn').forEach(b => b.classList.remove('sel'));
-    selJobEl = null;
+    var name=document.getElementById('b-name').value.trim();
+    var addr=document.getElementById('b-addr').value.trim();
+    var contact=document.getElementById('b-contact').value.trim();
+    var date=document.getElementById('b-date').value;
+    var time=document.getElementById('b-time').value;
+    var hours=parseInt(document.getElementById('b-hours').value);
+    var note=document.getElementById('b-note').value.trim();
+    if(!selJobEl||!name||!addr||!date){alert('Please fill in your info, pick a job, and choose a date.');return;}
+    var em=timeToMins(time)+hours*60;
+    var endTime=String(Math.floor(em/60)%24).padStart(2,'0')+':'+String(em%60).padStart(2,'0');
+    if(overlaps(date,time,endTime)){alert('That time overlaps with an existing booking. Please choose another time.');return;}
+    var job=selJobEl.dataset.job;
+    bookings.unshift({id:Date.now(),name:name,addr:addr,contact:contact,job:job,date:date,time:time,endTime:endTime,hours:hours,earn:hours*10,note:note,done:false});
+    var c=document.getElementById('confirm');
+    c.innerHTML='<h3>Request sent!</h3><p>Thanks '+name+'! Big Peter will confirm soon. <strong>'+job+'</strong> on <strong>'+fmtDateShort(date)+'</strong>, '+fmtTime(time)+'–'+fmtTime(endTime)+'.</p>';
+    c.classList.add('show'); setTimeout(function(){c.classList.remove('show');},5000);
+    document.getElementById('b-name').value=''; document.getElementById('b-addr').value='';
+    document.getElementById('b-contact').value=''; document.getElementById('b-note').value='';
+    document.getElementById('b-hours').value='1'; document.getElementById('b-time').value='09:00';
+    document.getElementById('b-date').value=todayStr>=AVAIL_START?todayStr:AVAIL_START;
+    document.querySelectorAll('.job-btn').forEach(function(b){b.classList.remove('sel');}); selJobEl=null;
   }
 
   function renderCal() {
-    const grid = document.getElementById('cal-grid');
-    const dow = new Date('2026-06-01T12:00:00').getDay();
-    let html = '';
-    for (let i = 0; i < dow; i++) html += `<div class="cal-day empty"></div>`;
-    for (let d = 1; d <= 30; d++) {
-      const dd = String(d).padStart(2, '0'), key = `2026-06-${dd}`;
-      const inRange = key >= AVAIL_START && key <= AVAIL_END;
-      const booked = inRange && hasAny(key);
-      let cls = 'cal-day' + (inRange ? (booked ? ' booked' : ' available') : ' outside') + (key === todayStr && inRange ? ' today' : '');
-      const clickMain = inRange ? `onclick="openSheet('${key}')"` : '';
-      const qBtn = booked ? `<button class="day-q" onclick="event.stopPropagation();openInfo('${key}')" aria-label="See booked times">?</button>` : '';
-      html += `<div class="${cls}" ${clickMain}><div class="cal-day-num">${d}</div>${qBtn}</div>`;
+    var grid=document.getElementById('cal-grid');
+    var dow=new Date('2026-06-01T12:00:00').getDay();
+    var html='';
+    for(var i=0;i<dow;i++) html+='<div class="cal-day empty"></div>';
+    for(var d=1;d<=30;d++){
+      var dd=String(d).padStart(2,'0'), key='2026-06-'+dd;
+      var inRange=key>=AVAIL_START&&key<=AVAIL_END;
+      var booked=inRange&&hasAny(key);
+      var cls='cal-day'+(inRange?(booked?' booked':' available'):' outside')+(key===todayStr&&inRange?' today':'');
+      var clickMain=inRange?'onclick="openSheet(\''+key+'\')"':'';
+      var qBtn=booked?'<button class="day-q" onclick="event.stopPropagation();openInfo(\''+key+'\')" aria-label="See booked times">?</button>':'';
+      html+='<div class="'+cls+'" '+clickMain+'><div class="cal-day-num">'+d+'</div>'+qBtn+'</div>';
     }
-    const used = (dow + 30) % 7;
-    if (used > 0) for (let i = 0; i < 7 - used; i++) html += `<div class="cal-day empty"></div>`;
-    grid.innerHTML = html;
+    var used=(dow+30)%7;
+    if(used>0) for(var j=0;j<7-used;j++) html+='<div class="cal-day empty"></div>';
+    grid.innerHTML=html;
   }
 
   function openSheet(dateKey) {
-    pendingDate = dateKey;
-    document.getElementById('sheet-date-label').textContent = fmtDateLong(dateKey);
-    document.getElementById('sh-from').value = '09:00';
-    document.getElementById('sh-to').value = '11:00';
-    document.getElementById('sh-name').value = '';
-    document.getElementById('sh-err').classList.remove('show');
+    pendingDate=dateKey;
+    document.getElementById('sheet-date-label').textContent=fmtDateLong(dateKey);
+    document.getElementById('sh-from').value='09:00'; document.getElementById('sh-to').value='11:00';
+    document.getElementById('sh-name').value=''; document.getElementById('sh-err').classList.remove('show');
     document.getElementById('sheet-backdrop').classList.add('show');
   }
-
   function closeSheet(e) {
-    if (e && e.target !== document.getElementById('sheet-backdrop')) return;
-    document.getElementById('sheet-backdrop').classList.remove('show');
-    pendingDate = null;
+    if(e&&e.target!==document.getElementById('sheet-backdrop')) return;
+    document.getElementById('sheet-backdrop').classList.remove('show'); pendingDate=null;
   }
-
-  function clearSheetErr() { document.getElementById('sh-err').classList.remove('show'); }
-
+  function clearSheetErr(){document.getElementById('sh-err').classList.remove('show');}
   function confirmSlot() {
-    const from = document.getElementById('sh-from').value;
-    const to = document.getElementById('sh-to').value;
-    const name = document.getElementById('sh-name').value.trim();
-    const err = document.getElementById('sh-err');
-    if (!name) { err.textContent = 'Please enter your name.'; err.classList.add('show'); return; }
-    if (timeToMins(to) <= timeToMins(from)) { err.textContent = 'End time must be after start time.'; err.classList.add('show'); return; }
-    if (overlaps(pendingDate, from, to)) {
-      const clash = getActive(pendingDate).find(b => timeToMins(from) < timeToMins(b.endTime) && timeToMins(to) > timeToMins(b.time));
-      err.textContent = `That time overlaps with an existing booking (${fmtTime(clash.time)}–${fmtTime(clash.endTime)}). Please request another time.`;
-      err.classList.add('show'); return;
+    var from=document.getElementById('sh-from').value, to=document.getElementById('sh-to').value;
+    var name=document.getElementById('sh-name').value.trim(), err=document.getElementById('sh-err');
+    if(!name){err.textContent='Please enter your name.';err.classList.add('show');return;}
+    if(timeToMins(to)<=timeToMins(from)){err.textContent='End time must be after start time.';err.classList.add('show');return;}
+    if(overlaps(pendingDate,from,to)){
+      var clash=getActive(pendingDate).find(function(b){return timeToMins(from)<timeToMins(b.endTime)&&timeToMins(to)>timeToMins(b.time);});
+      err.textContent='That time overlaps with an existing booking ('+fmtTime(clash.time)+'–'+fmtTime(clash.endTime)+'). Please request another time.';
+      err.classList.add('show');return;
     }
-    const dm = timeToMins(to) - timeToMins(from), hours = Math.max(1, Math.round(dm / 60));
-    bookings.unshift({ id: Date.now(), name, addr: '(via calendar)', contact: '', job: 'Time block', date: pendingDate, time: from, endTime: to, hours, earn: hours * 10, note: '', done: false });
-    document.getElementById('sheet-backdrop').classList.remove('show');
-    pendingDate = null;
-    renderCal();
+    var dm=timeToMins(to)-timeToMins(from), hours=Math.max(1,Math.round(dm/60));
+    bookings.unshift({id:Date.now(),name:name,addr:'(via calendar)',contact:'',job:'Time block',date:pendingDate,time:from,endTime:to,hours:hours,earn:hours*10,note:'',done:false});
+    document.getElementById('sheet-backdrop').classList.remove('show'); pendingDate=null; renderCal();
   }
-
   function openInfo(dateKey) {
-    const slots = getActive(dateKey).sort((a, b) => a.time.localeCompare(b.time));
-    document.getElementById('info-date-label').textContent = fmtDateLong(dateKey);
-    document.getElementById('info-slots').innerHTML = slots.map(b => `
-      <div class="time-slot-row"><div class="time-slot-dot"></div><div class="time-slot-text">${fmtTime(b.time)} – ${fmtTime(b.endTime)}</div></div>
-    `).join('');
+    var slots=getActive(dateKey).sort(function(a,b){return a.time.localeCompare(b.time);});
+    document.getElementById('info-date-label').textContent=fmtDateLong(dateKey);
+    document.getElementById('info-slots').innerHTML=slots.map(function(b){
+      return '<div class="time-slot-row"><div class="time-slot-dot"></div><div class="time-slot-text">'+fmtTime(b.time)+' – '+fmtTime(b.endTime)+'</div></div>';
+    }).join('');
     document.getElementById('info-backdrop').classList.add('show');
   }
-
   function closeInfo(e) {
-    if (e && e.target !== document.getElementById('info-backdrop')) return;
+    if(e&&e.target!==document.getElementById('info-backdrop')) return;
     document.getElementById('info-backdrop').classList.remove('show');
   }
-
-  function setF(f, btn) {
-    dashFilter = f;
-    document.querySelectorAll('.chip').forEach(c => c.classList.remove('on'));
-    btn.classList.add('on');
-    renderDash();
+  function setF(f,btn) {
+    dashFilter=f; document.querySelectorAll('.chip').forEach(function(c){c.classList.remove('on');}); btn.classList.add('on'); renderDash();
   }
-
-  function markDone(id) { const b = bookings.find(x => x.id === id); if (b) b.done = !b.done; renderDash(); renderCal(); }
-  function del(id) { bookings = bookings.filter(x => x.id !== id); renderDash(); renderCal(); }
-
+  function markDone(id){var b=bookings.find(function(x){return x.id===id;});if(b)b.done=!b.done;renderDash();renderCal();}
+  function del(id){bookings=bookings.filter(function(x){return x.id!==id;});renderDash();renderCal();}
   function renderDash() {
-    const filtered = bookings.filter(b => dashFilter === 'new' ? !b.done : dashFilter === 'done' ? b.done : true);
-    const totalHrs = bookings.filter(b => !b.done).reduce((s, b) => s + b.hours, 0);
-    const totalEarn = bookings.filter(b => !b.done).reduce((s, b) => s + b.earn, 0);
-    document.getElementById('st-jobs').textContent = bookings.length;
-    document.getElementById('st-hrs').textContent = totalHrs;
-    document.getElementById('st-earn').textContent = '$' + totalEarn;
-    const list = document.getElementById('bklist');
-    if (!filtered.length) {
-      list.innerHTML = `<div class="empty"><i class="ti ti-clipboard"></i>${bookings.length === 0 ? 'No bookings yet!' : 'Nothing here.'}</div>`;
-      return;
-    }
-    list.innerHTML = filtered.map(b => `
-      <div class="bk" style="${b.done ? 'opacity:0.5' : ''}">
-        <div class="bk-top"><div class="bk-name">${b.name}</div><div class="bk-contact">${b.contact || ''}</div></div>
-        <div class="bk-dt"><i class="ti ti-calendar" style="font-size:13px"></i>${fmtDateShort(b.date)}, ${fmtTime(b.time)}${b.endTime ? '–' + fmtTime(b.endTime) : ''}</div>
-        <div class="bk-meta">
-          <span class="badge b-job">${b.job}</span>
-          <span class="badge b-earn">$${b.earn}</span>
-          ${b.done ? '<span class="badge b-done">Done</span>' : '<span class="badge b-new">New</span>'}
-        </div>
-        <div class="bk-addr"><i class="ti ti-map-pin" style="font-size:12px"></i>${b.addr}</div>
-        ${b.note ? `<div class="bk-note">${b.note}</div>` : ''}
-        <div class="bk-actions">
-          <button class="act primary" onclick="markDone(${b.id})">${b.done ? 'Reopen' : 'Mark done'}</button>
-          <button class="act" onclick="del(${b.id})">Remove</button>
-        </div>
-      </div>
-    `).join('');
+    var filtered=bookings.filter(function(b){return dashFilter==='new'?!b.done:dashFilter==='done'?b.done:true;});
+    var totalHrs=bookings.filter(function(b){return !b.done;}).reduce(function(s,b){return s+b.hours;},0);
+    var totalEarn=bookings.filter(function(b){return !b.done;}).reduce(function(s,b){return s+b.earn;},0);
+    document.getElementById('st-jobs').textContent=bookings.length;
+    document.getElementById('st-hrs').textContent=totalHrs;
+    document.getElementById('st-earn').textContent='$'+totalEarn;
+    var list=document.getElementById('bklist');
+    if(!filtered.length){list.innerHTML='<div class="empty"><i class="ti ti-clipboard"></i>'+(bookings.length===0?'No bookings yet!':'Nothing here.')+'</div>';return;}
+    list.innerHTML=filtered.map(function(b){
+      return '<div class="bk" style="'+(b.done?'opacity:0.5':'')+'">'+
+        '<div class="bk-top"><div class="bk-name">'+b.name+'</div><div class="bk-contact">'+(b.contact||'')+'</div></div>'+
+        '<div class="bk-dt"><i class="ti ti-calendar" style="font-size:13px"></i>'+fmtDateShort(b.date)+', '+fmtTime(b.time)+(b.endTime?'–'+fmtTime(b.endTime):'')+'</div>'+
+        '<div class="bk-meta"><span class="badge b-job">'+b.job+'</span><span class="badge b-earn">$'+b.earn+'</span>'+(b.done?'<span class="badge b-done">Done</span>':'<span class="badge b-new">New</span>')+'</div>'+
+        '<div class="bk-addr"><i class="ti ti-map-pin" style="font-size:12px"></i>'+b.addr+'</div>'+
+        (b.note?'<div class="bk-note">'+b.note+'</div>':'')+
+        '<div class="bk-actions"><button class="act primary" onclick="markDone('+b.id+')">'+(b.done?'Reopen':'Mark done')+'</button><button class="act" onclick="del('+b.id+')">Remove</button></div>'+
+        '</div>';
+    }).join('');
   }
-
   renderCal();
 </script>
 </body>
