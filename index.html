@@ -344,9 +344,9 @@
     <div class="sheet-handle"></div>
     <div class="sheet-title">Pick a time</div>
     <div class="sheet-date" id="sheet-date-label"></div>
-    <div class="sheet-fields">
-      <div class="sheet-field"><label>From</label><input type="time" id="sh-from" value="09:00" oninput="clearSheetErr()" /></div>
-      <div class="sheet-field"><label>To</label><input type="time" id="sh-to" value="10:00" oninput="clearSheetErr()" /></div>
+    <div style="margin-bottom:1rem">
+      <label style="display:block;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:6px">Start time</label>
+      <input type="time" id="sh-from" value="09:00" oninput="clearSheetErr()" style="width:100%;padding:13px 12px;border:0.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--ink);background:#fff;outline:none;-webkit-appearance:none" />
     </div>
     <div class="sheet-err" id="sh-err"></div>
     <div style="margin-bottom:1rem">
@@ -566,7 +566,7 @@
     document.getElementById('calpicker-backdrop').classList.remove('show');
     document.getElementById('sheet-date-label').textContent = fmtDateLong(dateKey);
     document.getElementById('sh-from').value = '09:00';
-    document.getElementById('sh-to').value = '10:00';
+    
     document.getElementById('sh-err').classList.remove('show');
     document.getElementById('sheet-backdrop').classList.add('show');
   }
@@ -584,7 +584,7 @@
   function openSheet(dateKey) {
     pendingDate=dateKey;
     document.getElementById('sheet-date-label').textContent=fmtDateLong(dateKey);
-    document.getElementById('sh-from').value='09:00'; document.getElementById('sh-to').value='10:00';
+    document.getElementById('sh-from').value='09:00'; 
     document.getElementById('sh-err').classList.remove('show');
     document.getElementById('sheet-backdrop').classList.add('show');
   }
@@ -594,13 +594,15 @@
   }
   function clearSheetErr(){document.getElementById('sh-err').classList.remove('show');}
   function confirmSlot() {
-    var from=document.getElementById('sh-from').value, to=document.getElementById('sh-to').value;
-    var err=document.getElementById('sh-err');
-    if(timeToMins(to)<=timeToMins(from)){err.textContent='End time must be after start time.';err.classList.add('show');return;}
-    if(overlaps(selectedDate,from,to)){
-      var clash=getActive(selectedDate).find(function(b){return timeToMins(from)<timeToMins(b.endTime)&&timeToMins(to)>timeToMins(b.time);});
-      err.textContent='That time overlaps with an existing booking ('+fmtTime(clash.time)+'–'+fmtTime(clash.endTime)+'). Please request another time.';
-      err.classList.add('show');return;
+    var from = document.getElementById('sh-from').value;
+    var hours = parseInt(document.getElementById('b-hours').value);
+    var err = document.getElementById('sh-err');
+    var em = timeToMins(from) + hours * 60;
+    var to = String(Math.floor(em / 60) % 24).padStart(2, '0') + ':' + String(em % 60).padStart(2, '0');
+    if(overlaps(selectedDate, from, to)){
+      var clash = getActive(selectedDate).find(function(b){ return timeToMins(from) < timeToMins(b.endTime) && timeToMins(to) > timeToMins(b.time); });
+      err.textContent = 'That time overlaps with an existing booking (' + fmtTime(clash.time) + '–' + fmtTime(clash.endTime) + '). Please request another time.';
+      err.classList.add('show'); return;
     }
     selectedFrom = from;
     selectedTo = to;
