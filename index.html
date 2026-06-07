@@ -54,10 +54,23 @@
     .book-btn { width: 100%; padding: 19px; background: #fff; color: #1a1a18; border: 2px solid #1a1a18; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent; }
 
     /* CONFIRM TOAST */
-    .confirm-wrap { display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: var(--green); padding: 1rem 1.25rem; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
-    .confirm-wrap.show { display: block; }
-    .confirm-wrap h3 { font-family: 'Fraunces', serif; color: #fff; font-size: 16px; margin-bottom: 3px; font-weight: 500; }
-    .confirm-wrap p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+    /* confirm toast removed - now uses full thank you page */
+
+    /* THANK YOU PAGE */
+    .ty-page { display: none; min-height: 100vh; background: var(--bg); }
+    .ty-page.active { display: block; }
+    .ty-header { background: var(--green); padding: 2rem 1.25rem 2.5rem; text-align: center; }
+    .ty-check { width: 72px; height: 72px; border-radius: 50%; background: rgba(255,255,255,0.2); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 36px; }
+    .ty-header h2 { font-family: 'Fraunces', serif; color: #fff; font-size: 26px; font-weight: 600; margin-bottom: 6px; }
+    .ty-header p { color: rgba(255,255,255,0.8); font-size: 15px; line-height: 1.5; }
+    .ty-body { padding: 1.5rem 1.25rem; }
+    .ty-card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-bottom: 1.25rem; }
+    .ty-row { display: flex; align-items: flex-start; gap: 12px; padding: 14px 16px; border-top: 0.5px solid var(--border); }
+    .ty-row:first-child { border-top: none; }
+    .ty-row-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--green-light); display: flex; align-items: center; justify-content: center; color: var(--green); font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+    .ty-row-label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .ty-row-val { font-size: 16px; font-weight: 500; color: var(--ink); }
+    .ty-back-btn { width: 100%; padding: 16px; background: var(--green); color: #fff; border: none; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 18px; font-weight: 500; cursor: pointer; }
 
     /* FAB */
     .fab { position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1a1a18; font-size: 22px; z-index: 20; -webkit-tap-highlight-color: transparent; padding: 0; }
@@ -156,8 +169,6 @@
 </head>
 <body>
 
-<div class="confirm-wrap" id="confirm"></div>
-
 <button class="fab" id="fab" onclick="openPin()" aria-label="My bookings">
   <i class="ti ti-clipboard-list"></i>
 </button>
@@ -215,6 +226,44 @@
     </div>
 
     <button class="book-btn" onclick="submitBooking()">Request this job</button>
+  </div>
+</div>
+
+<!-- THANK YOU PAGE -->
+<div class="ty-page" id="ty-page">
+  <div class="ty-header">
+    <div class="ty-check">✓</div>
+    <h2>Thank you for booking!</h2>
+    <p>Big Peter will get back to you shortly.</p>
+  </div>
+  <div class="ty-body">
+    <div class="ty-card">
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-user"></i></div>
+        <div><div class="ty-row-label">Name</div><div class="ty-row-val" id="ty-name"></div></div>
+      </div>
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-map-pin"></i></div>
+        <div><div class="ty-row-label">Address</div><div class="ty-row-val" id="ty-addr"></div></div>
+      </div>
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-phone"></i></div>
+        <div><div class="ty-row-label">Phone / Email</div><div class="ty-row-val" id="ty-contact"></div></div>
+      </div>
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-tool"></i></div>
+        <div><div class="ty-row-label">Job</div><div class="ty-row-val" id="ty-job"></div></div>
+      </div>
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-calendar"></i></div>
+        <div><div class="ty-row-label">Date & Time</div><div class="ty-row-val" id="ty-datetime"></div></div>
+      </div>
+      <div class="ty-row">
+        <div class="ty-row-icon"><i class="ti ti-clock"></i></div>
+        <div><div class="ty-row-label">Duration & Pay</div><div class="ty-row-val" id="ty-pay"></div></div>
+      </div>
+    </div>
+    <button class="ty-back-btn" onclick="showMain()">Back to home</button>
   </div>
 </div>
 
@@ -383,6 +432,7 @@
   function showMain() {
     document.getElementById('main-page').style.display = 'block';
     document.getElementById('dash-page').classList.remove('active');
+    document.getElementById('ty-page').classList.remove('active');
     document.getElementById('fab').classList.remove('hidden');
   }
 
@@ -449,9 +499,18 @@
         Notes: note || 'None'
       })
     });
-    var c=document.getElementById('confirm');
-    c.innerHTML='<h3>Thank you for booking with me!</h3><p>I will get back to you shortly. Your request for <strong>'+job+'</strong> on <strong>'+fmtDateShort(date)+'</strong>, '+fmtTime(time)+'–'+fmtTime(endTime)+' has been received!</p>';
-    c.classList.add('show'); setTimeout(function(){c.classList.remove('show');},4000);
+    // Populate thank you page
+    document.getElementById('ty-name').textContent = name;
+    document.getElementById('ty-addr').textContent = addr;
+    document.getElementById('ty-contact').textContent = contact || 'Not provided';
+    document.getElementById('ty-job').textContent = job;
+    document.getElementById('ty-datetime').textContent = fmtDateShort(date) + ', ' + fmtTime(time) + '–' + fmtTime(endTime);
+    document.getElementById('ty-pay').textContent = hours + ' hour' + (hours > 1 ? 's' : '') + ' · $' + (hours * 10);
+    // Show TY page
+    document.getElementById('main-page').style.display = 'none';
+    document.getElementById('ty-page').classList.add('active');
+    document.getElementById('fab').classList.add('hidden');
+    // Reset form
     document.getElementById('b-name').value=''; document.getElementById('b-addr').value='';
     document.getElementById('b-contact').value=''; document.getElementById('b-note').value='';
     document.getElementById('b-hours').value='1';
