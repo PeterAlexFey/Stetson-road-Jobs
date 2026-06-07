@@ -18,6 +18,8 @@
     }
     html, body { height: 100%; }
     body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--ink); max-width: 430px; margin: 0 auto; min-height: 100vh; font-size: 19px; }
+
+    /* HEADER */
     .header { background: var(--green); padding: 1.5rem 1.25rem 1.25rem; text-align: center; position: relative; }
     .header-avatar { width: 52px; height: 52px; border-radius: 50%; background: #5a9e74; margin: 0 auto 0.6rem; display: flex; align-items: center; justify-content: center; font-size: 24px; border: 2px solid rgba(255,255,255,0.3); }
     .header h1 { font-family: 'Fraunces', serif; color: #fff; font-size: 28px; font-weight: 600; margin-bottom: 4px; }
@@ -25,15 +27,21 @@
     .header-pills { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
     .pill { background: rgba(255,255,255,0.15); color: rgba(255,255,255,0.92); font-size: 15px; font-weight: 500; padding: 5px 14px; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
     .payment-badge { position: absolute; top: 12px; left: 12px; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); border-radius: 8px; padding: 5px 9px; font-size: 11px; font-weight: 500; color: #fff; line-height: 1.3; text-align: left; max-width: 110px; }
+
+    /* PAGE */
     .page { padding: 1.25rem; padding-bottom: 5rem; }
     .section-label { font-size: 15px; font-weight: 500; color: var(--muted); margin-bottom: 0.75rem; }
     .card { background: var(--card); border: 0.5px solid var(--border); border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1rem; }
     .section-divider { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); margin: 2rem 0 1rem; }
+
+    /* JOBS */
     .job-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .job-btn { padding: 16px 13px; border: 0.5px solid var(--border); border-radius: 10px; background: #fff; cursor: pointer; font-size: 17px; font-weight: 500; color: #1a1a18; text-align: left; transition: all 0.15s; display: flex; align-items: center; gap: 10px; font-family: 'DM Sans', sans-serif; line-height: 1.3; -webkit-tap-highlight-color: transparent; }
     .job-btn i { font-size: 24px; color: #999; flex-shrink: 0; }
     .job-btn.sel { border-color: var(--green); background: var(--green-light); border-width: 1.5px; }
     .job-btn.sel i { color: var(--green); }
+
+    /* FIELDS */
     .field { margin-bottom: 1rem; }
     .field:last-child { margin-bottom: 0; }
     .field label { display: block; font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
@@ -42,13 +50,20 @@
     .field textarea { resize: none; height: 90px; line-height: 1.5; }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
     .rate-note { font-size: 13px; color: var(--muted); margin-top: 5px; }
+
     .book-btn { width: 100%; padding: 19px; background: #fff; color: #1a1a18; border: 2px solid #1a1a18; border-radius: 12px; font-family: 'Fraunces', serif; font-size: 22px; font-weight: 500; cursor: pointer; margin-top: 0.5rem; -webkit-tap-highlight-color: transparent; }
+
+    /* CONFIRM TOAST */
     .confirm-wrap { display: none; position: fixed; top: 0; left: 50%; transform: translateX(-50%); width: 100%; max-width: 430px; background: var(--green); padding: 1rem 1.25rem; z-index: 200; box-shadow: 0 4px 16px rgba(0,0,0,0.15); }
     .confirm-wrap.show { display: block; }
     .confirm-wrap h3 { font-family: 'Fraunces', serif; color: #fff; font-size: 16px; margin-bottom: 3px; font-weight: 500; }
     .confirm-wrap p { font-size: 13px; color: rgba(255,255,255,0.85); line-height: 1.5; }
+
+    /* FAB */
     .fab { position: fixed; bottom: 22px; right: 20px; width: 28px; height: 28px; background: none; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; color: #1a1a18; font-size: 22px; z-index: 20; -webkit-tap-highlight-color: transparent; padding: 0; }
     .fab.hidden { display: none; }
+
+    /* CALENDAR */
     .cal-top { display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
     .cal-month-label { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 500; color: var(--ink); }
     .cal-dow { text-align: center; font-size: 11px; font-weight: 500; color: var(--muted); padding: 4px 0; text-transform: uppercase; letter-spacing: 0.04em; }
@@ -65,6 +80,8 @@
     .cal-legend { display: flex; gap: 14px; margin-top: 1rem; flex-wrap: wrap; }
     .leg { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); }
     .leg-box { width: 13px; height: 13px; border-radius: 3px; flex-shrink: 0; }
+
+    /* SHEETS */
     .sheet-backdrop { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.35); z-index: 100; align-items: flex-end; justify-content: center; }
     .sheet-backdrop.show { display: flex; }
     .sheet-handle { width: 36px; height: 4px; border-radius: 2px; background: #ddd; margin: 0 auto 1rem; }
@@ -105,6 +122,8 @@
     .time-slot-dot { width: 9px; height: 9px; border-radius: 50%; background: #bbb; flex-shrink: 0; }
     .time-slot-text { font-size: 16px; font-weight: 500; color: var(--ink); }
     .info-close-btn { width: 100%; padding: 14px; background: var(--bg); color: var(--ink); border: 0.5px solid var(--border); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 16px; font-weight: 500; cursor: pointer; margin-top: 1rem; }
+
+    /* DASHBOARD */
     .dash-view { display: none; padding: 1.25rem; padding-bottom: 5rem; }
     .dash-view.active { display: block; }
     .dash-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 1rem; }
@@ -143,6 +162,7 @@
   <i class="ti ti-clipboard-list"></i>
 </button>
 
+<!-- MAIN PAGE -->
 <div id="main-page">
   <div class="header">
     <div class="payment-badge">Payment due after job is done</div>
@@ -156,6 +176,7 @@
   </div>
 
   <div class="page">
+    <!-- YOUR INFO -->
     <div class="card">
       <div class="section-label">Your info</div>
       <div class="field"><label>Your name</label><input type="text" id="b-name" placeholder="e.g. Maria G." autocomplete="name" /></div>
@@ -163,11 +184,12 @@
       <div class="field"><label>Phone or email</label><input type="text" id="b-contact" placeholder="555-0100 or you@email.com" autocomplete="email" /></div>
     </div>
 
+    <!-- WHAT DO YOU NEED -->
     <div class="card">
       <div class="section-label">What do you need?</div>
       <div class="job-grid">
-        <button class="job-btn" data-job="Yard & leaves" onclick="selJob(this)"><i class="ti ti-leaf"></i>Yard & leaves</button>
-        <button class="job-btn" data-job="Firewood stacking" onclick="selJob(this)"><i class="ti ti-flame"></i>Firewood stacking</button>
+        <button class="job-btn" data-job="Yardwork" onclick="selJob(this)"><i class="ti ti-leaf"></i>Yardwork</button>
+        <button class="job-btn" data-job="Website design" onclick="selJob(this)"><i class="ti ti-code"></i>Website design</button>
         <button class="job-btn" data-job="Dog walking" onclick="selJob(this)"><i class="ti ti-paw"></i>Dog walking</button>
         <button class="job-btn" data-job="Kid's helper" onclick="selJob(this)"><i class="ti ti-mood-smile"></i>Kid's helper</button>
         <button class="job-btn" data-job="Car wash" onclick="selJob(this)"><i class="ti ti-car"></i>Car wash</button>
@@ -175,11 +197,15 @@
       </div>
     </div>
 
+    <!-- SCHEDULE -->
     <div class="card">
       <div class="section-label">Schedule</div>
-      <div class="field-row">
-        <div class="field"><label>Date</label><input type="date" id="b-date" /></div>
-        <div class="field"><label>Start time</label><input type="time" id="b-time" value="09:00" /></div>
+      <div id="dt-selected" style="display:none;background:var(--green-light);border:1px solid #7ab89a;border-radius:10px;padding:10px 14px;margin-bottom:1rem;font-size:15px;font-weight:500;color:var(--green)"></div>
+      <div style="display:flex;justify-content:center;margin-bottom:1rem">
+        <button onclick="openCalPicker()" style="width:140px;height:140px;border-radius:50%;background:var(--green);border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent">
+          <i class="ti ti-calendar" style="font-size:36px;color:#fff"></i>
+          <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:#fff;line-height:1.2">Date &amp;<br>Time</span>
+        </button>
       </div>
       <div class="field">
         <label>How many hours?</label>
@@ -199,24 +225,10 @@
     </div>
 
     <button class="book-btn" onclick="submitBooking()">Request this job</button>
-
-    <div class="section-divider">Availability</div>
-    <div class="card">
-      <div class="cal-top"><div class="cal-month-label">June 2026</div></div>
-      <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px">
-        <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
-        <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
-      </div>
-      <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"></div>
-      <div class="cal-legend">
-        <div class="leg"><div class="leg-box" style="background:#fff;border:0.5px solid #ccc"></div>Available</div>
-        <div class="leg"><div class="leg-box" style="background:#e0e0de;border:0.5px solid #bbb"></div>Booked</div>
-        <div class="leg"><div class="leg-box" style="background:#f0ede9;opacity:0.5"></div>Outside range</div>
-      </div>
-    </div>
   </div>
 </div>
 
+<!-- DASHBOARD PAGE -->
 <div class="dash-view" id="dash-page">
   <div class="header" style="text-align:left;padding:1rem 1.25rem;display:flex;align-items:center;gap:12px">
     <button onclick="showMain()" style="background:none;border:none;cursor:pointer;color:#fff;font-size:24px;padding:0;line-height:1;display:flex;align-items:center" aria-label="Back"><i class="ti ti-arrow-left"></i></button>
@@ -237,6 +249,26 @@
   </div>
 </div>
 
+<!-- CALENDAR PICKER SHEET -->
+<div class="sheet-backdrop" id="calpicker-backdrop" onclick="closeCalPicker(event)">
+  <div class="sheet" style="padding-bottom:2rem">
+    <div class="sheet-handle"></div>
+    <div style="font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--ink);margin-bottom:1.25rem">Pick a date</div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px">
+      <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
+      <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
+    </div>
+    <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"></div>
+    <div class="cal-legend" style="margin-top:0.875rem">
+      <div class="leg"><div class="leg-box" style="background:#fff;border:0.5px solid #ccc"></div>Available</div>
+      <div class="leg"><div class="leg-box" style="background:#e0e0de;border:0.5px solid #bbb"></div>Booked</div>
+      <div class="leg"><div class="leg-box" style="background:#f0ede9;opacity:0.5"></div>Outside range</div>
+    </div>
+    <button class="sheet-cancel" onclick="closeCalPicker()">Cancel</button>
+  </div>
+</div>
+
+<!-- PIN SHEET -->
 <div class="sheet-backdrop" id="pin-backdrop">
   <div class="pin-sheet">
     <div class="sheet-handle"></div>
@@ -267,6 +299,7 @@
   </div>
 </div>
 
+<!-- BOOKING SHEET -->
 <div class="sheet-backdrop" id="sheet-backdrop" onclick="closeSheet(event)">
   <div class="sheet">
     <div class="sheet-handle"></div>
@@ -277,15 +310,12 @@
       <div class="sheet-field"><label>To</label><input type="time" id="sh-to" value="11:00" oninput="clearSheetErr()" /></div>
     </div>
     <div class="sheet-err" id="sh-err"></div>
-    <div class="sheet-name-field">
-      <label>Your name</label>
-      <input type="text" id="sh-name" placeholder="e.g. The Garcias" oninput="clearSheetErr()" />
-    </div>
-    <button class="sheet-btn" onclick="confirmSlot()">Confirm booking</button>
+    <button class="sheet-btn" onclick="confirmSlot()">Confirm time</button>
     <button class="sheet-cancel" onclick="closeSheet()">Cancel</button>
   </div>
 </div>
 
+<!-- INFO SHEET -->
 <div class="sheet-backdrop" id="info-backdrop" onclick="closeInfo(event)">
   <div class="info-sheet">
     <div class="sheet-handle"></div>
@@ -363,10 +393,6 @@
   var AVAIL_END = '2026-06-20';
   var todayStr = new Date().toISOString().split('T')[0];
 
-  document.getElementById('b-date').value = todayStr >= AVAIL_START ? todayStr : AVAIL_START;
-  document.getElementById('b-date').min = AVAIL_START;
-  document.getElementById('b-date').max = AVAIL_END;
-
   function selJob(btn) {
     document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
     btn.classList.add('sel'); selJobEl = btn;
@@ -391,13 +417,13 @@
     var name=document.getElementById('b-name').value.trim();
     var addr=document.getElementById('b-addr').value.trim();
     var contact=document.getElementById('b-contact').value.trim();
-    var date=document.getElementById('b-date').value;
-    var time=document.getElementById('b-time').value;
     var hours=parseInt(document.getElementById('b-hours').value);
     var note=document.getElementById('b-note').value.trim();
-    if(!selJobEl||!name||!addr||!date){alert('Please fill in your info, pick a job, and choose a date.');return;}
-    var em=timeToMins(time)+hours*60;
-    var endTime=String(Math.floor(em/60)%24).padStart(2,'0')+':'+String(em%60).padStart(2,'0');
+    if(!selJobEl||!name||!addr){alert('Please fill in your info and pick a job.');return;}
+    if(!selectedDate||!selectedFrom||!selectedTo){alert('Please pick a date and time using the Date & Time button.');return;}
+    var date=selectedDate, time=selectedFrom, endTime=selectedTo;
+    var em=timeToMins(endTime)-timeToMins(time);
+    hours=Math.max(1,Math.round(em/60));
     if(overlaps(date,time,endTime)){alert('That time overlaps with an existing booking. Please choose another time.');return;}
     var job=selJobEl.dataset.job;
     bookings.unshift({id:Date.now(),name:name,addr:addr,contact:contact,job:job,date:date,time:time,endTime:endTime,hours:hours,earn:hours*10,note:note,done:false});
@@ -410,7 +436,7 @@
         'Phone or Email': contact,
         Job: job,
         Date: fmtDateShort(date),
-        Time: fmtTime(time) + '–' + fmtTime(endTime),
+        Time: fmtTime(time) + '\u2013' + fmtTime(endTime),
         Hours: hours,
         Pay: '$' + (hours * 10),
         Notes: note || 'None'
@@ -421,36 +447,79 @@
     c.classList.add('show'); setTimeout(function(){c.classList.remove('show');},4000);
     document.getElementById('b-name').value=''; document.getElementById('b-addr').value='';
     document.getElementById('b-contact').value=''; document.getElementById('b-note').value='';
-    document.getElementById('b-hours').value='1'; document.getElementById('b-time').value='09:00';
-    document.getElementById('b-date').value=todayStr>=AVAIL_START?todayStr:AVAIL_START;
+    document.getElementById('b-hours').value='1';
     document.querySelectorAll('.job-btn').forEach(function(b){b.classList.remove('sel');}); selJobEl=null;
+    selectedDate=null; selectedFrom=null; selectedTo=null;
+    updateDtSelected();
     renderCal();
   }
 
-  function renderCal() {
-    var grid=document.getElementById('cal-grid');
-    var dow=new Date('2026-06-01T12:00:00').getDay();
-    var html='';
-    for(var i=0;i<dow;i++) html+='<div class="cal-day empty"></div>';
-    for(var d=1;d<=30;d++){
-      var dd=String(d).padStart(2,'0'), key='2026-06-'+dd;
-      var inRange=key>=AVAIL_START&&key<=AVAIL_END;
-      var booked=inRange&&hasAny(key);
-      var cls='cal-day'+(inRange?(booked?' booked':' available'):' outside')+(key===todayStr&&inRange?' today':'');
-      var clickMain=inRange?'onclick="openSheet(\''+key+'\')"':'';
-      var qBtn=booked?'<button class="day-q" onclick="event.stopPropagation();openInfo(\''+key+'\')" aria-label="See booked times">?</button>':'';
-      html+='<div class="'+cls+'" '+clickMain+'><div class="cal-day-num">'+d+'</div>'+qBtn+'</div>';
+  var selectedDate = null;
+  var selectedFrom = null;
+  var selectedTo = null;
+
+  function openCalPicker() {
+    renderCal();
+    document.getElementById('calpicker-backdrop').classList.add('show');
+  }
+  function closeCalPicker(e) {
+    if(e && e.target !== document.getElementById('calpicker-backdrop')) return;
+    document.getElementById('calpicker-backdrop').classList.remove('show');
+  }
+
+    function renderCal() {
+    var grid = document.getElementById('cal-grid');
+    if (!grid) return;
+    var dow = new Date('2026-06-01T12:00:00').getDay();
+    var html = '';
+    for (var i = 0; i < dow; i++) html += '<div class="cal-day empty"></div>';
+    for (var d = 1; d <= 30; d++) {
+      var dd = String(d).padStart(2, '0');
+      var key = '2026-06-' + dd;
+      var inRange = key >= AVAIL_START && key <= AVAIL_END;
+      var booked = inRange && hasAny(key);
+      var cls = 'cal-day';
+      if (!inRange) cls += ' outside';
+      else if (booked) cls += ' booked';
+      else cls += ' available';
+      if (key === todayStr && inRange) cls += ' today';
+      var qBtn = booked ? '<button class="day-q" onclick="event.stopPropagation();openInfo(\'' + key + '\')" aria-label="See booked times">?</button>' : '';
+      if (inRange) {
+        html += '<div class="' + cls + '" onclick="pickDate(\'' + key + '\')">' + '<div class="cal-day-num">' + d + '</div>' + qBtn + '</div>';
+      } else {
+        html += '<div class="' + cls + '"><div class="cal-day-num">' + d + '</div></div>';
+      }
     }
-    var used=(dow+30)%7;
-    if(used>0) for(var j=0;j<7-used;j++) html+='<div class="cal-day empty"></div>';
-    grid.innerHTML=html;
+    var used = (dow + 30) % 7;
+    if (used > 0) for (var j = 0; j < 7 - used; j++) html += '<div class="cal-day empty"></div>';
+    grid.innerHTML = html;
+  }
+
+  function pickDate(dateKey) {
+    selectedDate = dateKey;
+    document.getElementById('calpicker-backdrop').classList.remove('show');
+    document.getElementById('sheet-date-label').textContent = fmtDateLong(dateKey);
+    document.getElementById('sh-from').value = '09:00';
+    document.getElementById('sh-to').value = '11:00';
+    document.getElementById('sh-err').classList.remove('show');
+    document.getElementById('sheet-backdrop').classList.add('show');
+  }
+
+  function updateDtSelected() {
+    var el = document.getElementById('dt-selected');
+    if(selectedDate && selectedFrom && selectedTo) {
+      el.style.display = 'block';
+      el.innerHTML = '<i class="ti ti-calendar" style="margin-right:6px"></i>' + fmtDateShort(selectedDate) + ', ' + fmtTime(selectedFrom) + '–' + fmtTime(selectedTo);
+    } else {
+      el.style.display = 'none';
+    }
   }
 
   function openSheet(dateKey) {
     pendingDate=dateKey;
     document.getElementById('sheet-date-label').textContent=fmtDateLong(dateKey);
     document.getElementById('sh-from').value='09:00'; document.getElementById('sh-to').value='11:00';
-    document.getElementById('sh-name').value=''; document.getElementById('sh-err').classList.remove('show');
+    document.getElementById('sh-err').classList.remove('show');
     document.getElementById('sheet-backdrop').classList.add('show');
   }
   function closeSheet(e) {
@@ -460,17 +529,18 @@
   function clearSheetErr(){document.getElementById('sh-err').classList.remove('show');}
   function confirmSlot() {
     var from=document.getElementById('sh-from').value, to=document.getElementById('sh-to').value;
-    var name=document.getElementById('sh-name').value.trim(), err=document.getElementById('sh-err');
-    if(!name){err.textContent='Please enter your name.';err.classList.add('show');return;}
+    var err=document.getElementById('sh-err');
     if(timeToMins(to)<=timeToMins(from)){err.textContent='End time must be after start time.';err.classList.add('show');return;}
-    if(overlaps(pendingDate,from,to)){
-      var clash=getActive(pendingDate).find(function(b){return timeToMins(from)<timeToMins(b.endTime)&&timeToMins(to)>timeToMins(b.time);});
+    if(overlaps(selectedDate,from,to)){
+      var clash=getActive(selectedDate).find(function(b){return timeToMins(from)<timeToMins(b.endTime)&&timeToMins(to)>timeToMins(b.time);});
       err.textContent='That time overlaps with an existing booking ('+fmtTime(clash.time)+'–'+fmtTime(clash.endTime)+'). Please request another time.';
       err.classList.add('show');return;
     }
-    var dm=timeToMins(to)-timeToMins(from), hours=Math.max(1,Math.round(dm/60));
-    bookings.unshift({id:Date.now(),name:name,addr:'(via calendar)',contact:'',job:'Time block',date:pendingDate,time:from,endTime:to,hours:hours,earn:hours*10,note:'',done:false});
-    document.getElementById('sheet-backdrop').classList.remove('show'); pendingDate=null; renderCal();
+    selectedFrom = from;
+    selectedTo = to;
+    updateDtSelected();
+    document.getElementById('sheet-backdrop').classList.remove('show');
+    renderCal();
   }
   function openInfo(dateKey) {
     var slots=getActive(dateKey).sort(function(a,b){return a.time.localeCompare(b.time);});
