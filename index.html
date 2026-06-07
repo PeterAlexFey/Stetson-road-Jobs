@@ -205,18 +205,8 @@
         <button onclick="openCalPicker()" style="width:140px;height:140px;border-radius:50%;background:var(--green);border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;-webkit-tap-highlight-color:transparent">
           <i class="ti ti-calendar" style="font-size:36px;color:#fff"></i>
           <span style="font-family:'Fraunces',serif;font-size:16px;font-weight:500;color:#fff;line-height:1.2">Date &amp;<br>Time</span>
+          <span style="font-size:11px;color:rgba(255,255,255,0.75);font-family:'DM Sans',sans-serif">(click here)</span>
         </button>
-      </div>
-      <div class="field">
-        <label>How many hours?</label>
-        <select id="b-hours">
-          <option value="1">1 hour — $10</option>
-          <option value="2">2 hours — $20</option>
-          <option value="3">3 hours — $30</option>
-          <option value="4">4 hours — $40</option>
-          <option value="5">5 hours — $50</option>
-        </select>
-        <div class="rate-note">$10 per hour · paid same day</div>
       </div>
       <div class="field">
         <label>Extra details (optional)</label>
@@ -310,6 +300,17 @@
       <div class="sheet-field"><label>To</label><input type="time" id="sh-to" value="11:00" oninput="clearSheetErr()" /></div>
     </div>
     <div class="sheet-err" id="sh-err"></div>
+    <div style="margin-bottom:1rem">
+      <label style="display:block;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:6px">How many hours?</label>
+      <select id="b-hours" style="width:100%;padding:13px 12px;border:0.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--ink);background:#fff;outline:none;-webkit-appearance:none;appearance:none">
+        <option value="1">1 hour — $10</option>
+        <option value="2">2 hours — $20</option>
+        <option value="3">3 hours — $30</option>
+        <option value="4">4 hours — $40</option>
+        <option value="5">5 hours — $50</option>
+      </select>
+      <div style="font-size:13px;color:var(--muted);margin-top:5px">$10 per hour · paid same day</div>
+    </div>
     <button class="sheet-btn" onclick="confirmSlot()">Confirm time</button>
     <button class="sheet-cancel" onclick="closeSheet()">Cancel</button>
   </div>
@@ -394,8 +395,14 @@
   var todayStr = new Date().toISOString().split('T')[0];
 
   function selJob(btn) {
-    document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
-    btn.classList.add('sel'); selJobEl = btn;
+    if (btn.classList.contains('sel')) {
+      btn.classList.remove('sel');
+      selJobEl = null;
+    } else {
+      document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
+      btn.classList.add('sel');
+      selJobEl = btn;
+    }
   }
 
   function fmtTime(t) {
