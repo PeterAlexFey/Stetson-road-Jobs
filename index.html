@@ -344,6 +344,7 @@
     <div class="sheet-handle"></div>
     <div class="sheet-title">Pick a time</div>
     <div class="sheet-date" id="sheet-date-label"></div>
+    <div id="sh-unavail" style="display:none;background:#fdeaea;border-radius:8px;padding:8px 12px;font-size:13px;color:#c0392b;font-weight:500;margin-bottom:1rem;line-height:1.5"></div>
     <div style="margin-bottom:1rem">
       <label style="display:block;font-size:14px;font-weight:500;color:var(--muted);margin-bottom:6px">Start time</label>
       <input type="time" id="sh-from" value="09:00" oninput="clearSheetErr()" style="width:100%;padding:13px 12px;border:0.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--ink);background:#fff;outline:none;-webkit-appearance:none" />
@@ -546,10 +547,9 @@
       var booked = inRange && hasAny(key);
       var cls = 'cal-day';
       if (!inRange) cls += ' outside';
-      else if (booked) cls += ' booked';
       else cls += ' available';
       if (key === todayStr && inRange) cls += ' today';
-      var qBtn = booked ? '<button class="day-q" onclick="event.stopPropagation();openInfo(\'' + key + '\')" aria-label="See booked times">?</button>' : '';
+      var qBtn = '';
       if (inRange) {
         html += '<div class="' + cls + '" onclick="pickDate(\'' + key + '\')">' + '<div class="cal-day-num">' + d + '</div>' + qBtn + '</div>';
       } else {
@@ -567,6 +567,16 @@
     document.getElementById('sheet-date-label').textContent = fmtDateLong(dateKey);
     document.getElementById('sh-from').value = '09:00';
     document.getElementById('sh-err').classList.remove('show');
+    // Show unavailable times if any
+    var slots = getActive(dateKey).sort(function(a,b){return a.time.localeCompare(b.time);});
+    var unavailEl = document.getElementById('sh-unavail');
+    if (slots.length > 0) {
+      var times = slots.map(function(b){ return fmtTime(b.time) + '–' + fmtTime(b.endTime); }).join(', ');
+      unavailEl.textContent = 'Unavailable: ' + times;
+      unavailEl.style.display = 'block';
+    } else {
+      unavailEl.style.display = 'none';
+    }
     document.getElementById('sheet-backdrop').classList.add('show');
   }
 
