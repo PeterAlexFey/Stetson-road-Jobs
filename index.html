@@ -446,14 +446,18 @@
   var todayStr = new Date().toISOString().split('T')[0];
 
   function selJob(btn) {
-    if (btn.classList.contains('sel')) {
-      btn.classList.remove('sel');
-      selJobEl = null;
+    btn.classList.toggle('sel');
+    var selected = document.querySelectorAll('.job-btn.sel');
+    if (selected.length > 0) {
+      selJobEl = selected[0]; // keep reference for validation
     } else {
-      document.querySelectorAll('.job-btn').forEach(function(b) { b.classList.remove('sel'); });
-      btn.classList.add('sel');
-      selJobEl = btn;
+      selJobEl = null;
     }
+  }
+  function getSelectedJobs() {
+    var jobs = [];
+    document.querySelectorAll('.job-btn.sel').forEach(function(b){ jobs.push(b.dataset.job); });
+    return jobs;
   }
 
   function fmtTime(t) {
@@ -483,7 +487,7 @@
     var em=timeToMins(endTime)-timeToMins(time);
     hours=Math.max(1,Math.round(em/60));
     if(overlaps(date,time,endTime)){alert('That time overlaps with an existing booking. Please choose another time.');return;}
-    var job=selJobEl.dataset.job;
+    var jobs=getSelectedJobs(); var job=jobs.join(', ');
     bookings.unshift({id:Date.now(),name:name,addr:addr,contact:contact,job:job,date:date,time:time,endTime:endTime,hours:hours,earn:hours*10,note:note,done:false});
     fetch('https://formspree.io/f/mgobaekl', {
       method: 'POST',
@@ -515,7 +519,7 @@
     document.getElementById('b-name').value=''; document.getElementById('b-addr').value='';
     document.getElementById('b-contact').value=''; document.getElementById('b-note').value='';
     document.getElementById('b-hours').value='1';
-    document.querySelectorAll('.job-btn').forEach(function(b){b.classList.remove('sel');}); selJobEl=null;
+    document.querySelectorAll('.job-btn').forEach(function(b){b.classList.remove('sel');}); selJobEl=null; 
     selectedDate=null; selectedFrom=null; selectedTo=null;
     updateDtSelected();
     renderCal();
