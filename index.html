@@ -290,14 +290,10 @@
 
 <!-- CALENDAR PICKER SHEET -->
 <div class="sheet-backdrop" id="calpicker-backdrop" onclick="closeCalPicker(event)">
-  <div class="sheet" style="padding-bottom:2rem">
+  <div class="sheet" style="padding-bottom:2rem;max-height:85vh;overflow-y:auto;">
     <div class="sheet-handle"></div>
-    <div style="font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--ink);margin-bottom:1.25rem">Pick a date</div>
-    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px">
-      <div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div>
-      <div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>
-    </div>
-    <div id="cal-grid" style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px"></div>
+    <div style="font-family:'Fraunces',serif;font-size:19px;font-weight:500;color:var(--ink);margin-bottom:1rem">Pick a date</div>
+    <div id="cal-grid"></div>
     <div class="cal-legend" style="margin-top:0.875rem">
       <div class="leg"><div class="leg-box" style="background:#fff;border:0.5px solid #ccc"></div>Available</div>
       <div class="leg"><div class="leg-box" style="background:#e0e0de;border:0.5px solid #bbb"></div>Booked</div>
@@ -441,8 +437,8 @@
   var selJobEl = null;
   var dashFilter = 'all';
   var pendingDate = null;
-  var AVAIL_START = '2026-06-08';
-  var AVAIL_END = '2026-06-20';
+  var AVAIL_START = '2026-08-01';
+  var AVAIL_END = '2026-12-20';
   var todayStr = new Date().toISOString().split('T')[0];
 
   function selJob(btn) {
@@ -541,28 +537,55 @@
     function renderCal() {
     var grid = document.getElementById('cal-grid');
     if (!grid) return;
-    var dow = new Date('2026-06-01T12:00:00').getDay();
+    var AVAIL_DATES = ['2026-08-01','2026-08-02','2026-08-15','2026-08-16','2026-08-29','2026-08-30',
+      '2026-09-12','2026-09-13','2026-09-26','2026-09-27',
+      '2026-10-10','2026-10-11','2026-10-24','2026-10-25',
+      '2026-11-07','2026-11-08','2026-11-21','2026-11-22',
+      '2026-12-05','2026-12-06','2026-12-19','2026-12-20'];
+    var months = [
+      {year:2026, month:8, days:31, label:'August 2026'},
+      {year:2026, month:9, days:30, label:'September 2026'},
+      {year:2026, month:10, days:31, label:'October 2026'},
+      {year:2026, month:11, days:30, label:'November 2026'},
+      {year:2026, month:12, days:31, label:'December 2026'}
+    ];
     var html = '';
-    for (var i = 0; i < dow; i++) html += '<div class="cal-day empty"></div>';
-    for (var d = 1; d <= 30; d++) {
-      var dd = String(d).padStart(2, '0');
-      var key = '2026-06-' + dd;
-      var inRange = key >= AVAIL_START && key <= AVAIL_END;
-      var booked = inRange && hasAny(key);
-      var cls = 'cal-day';
-      if (!inRange) cls += ' outside';
-      else cls += ' available';
-      if (key === todayStr && inRange) cls += ' today';
-      var qBtn = '';
-      if (inRange) {
-        html += '<div class="' + cls + '" onclick="pickDate(\'' + key + '\')">' + '<div class="cal-day-num">' + d + '</div>' + qBtn + '</div>';
-      } else {
-        html += '<div class="' + cls + '"><div class="cal-day-num">' + d + '</div></div>';
+    for (var m = 0; m < months.length; m++) {
+      var mo = months[m];
+      var mm = String(mo.month).padStart(2,'0');
+      var firstDow = new Date(mo.year + '-' + mm + '-01T12:00:00').getDay();
+      html += '<div id="cal-month-' + mo.month + '" style="font-family:Fraunces,serif;font-size:16px;font-weight:500;color:var(--ink);margin:' + (m===0?'0':'1.25rem') + ' 0 0.75rem">' + mo.label + '</div>';
+      html += '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:6px">';
+      html += '<div class="cal-dow">Su</div><div class="cal-dow">Mo</div><div class="cal-dow">Tu</div><div class="cal-dow">We</div><div class="cal-dow">Th</div><div class="cal-dow">Fr</div><div class="cal-dow">Sa</div>';
+      html += '</div>';
+      html += '<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:4px">';
+      for (var i = 0; i < firstDow; i++) html += '<div class="cal-day empty"></div>';
+      for (var d = 1; d <= mo.days; d++) {
+        var dd = String(d).padStart(2,'0');
+        var key = mo.year + '-' + mm + '-' + dd;
+        var inRange = AVAIL_DATES.indexOf(key) !== -1;
+        var cls = 'cal-day' + (inRange ? ' available' : ' outside');
+        if (key === todayStr && inRange) cls += ' today';
+        if (inRange) {
+          html += '<div class="' + cls + '" onclick="pickDate(\'' + key + '\')">' + '<div class="cal-day-num">' + d + '</div></div>';
+        } else {
+          html += '<div class="' + cls + '"><div class="cal-day-num">' + d + '</div></div>';
+        }
       }
+      var used = (firstDow + mo.days) % 7;
+      if (used > 0) for (var j = 0; j < 7 - used; j++) html += '<div class="cal-day empty"></div>';
+      html += '</div>';
     }
-    var used = (dow + 30) % 7;
-    if (used > 0) for (var j = 0; j < 7 - used; j++) html += '<div class="cal-day empty"></div>';
     grid.innerHTML = html;
+    // Scroll to current month
+    var now = new Date();
+    var curMonth = now.getMonth() + 1;
+    if (curMonth < 8) curMonth = 8;
+    if (curMonth > 12) curMonth = 12;
+    setTimeout(function() {
+      var el = document.getElementById('cal-month-' + curMonth);
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 50);
   }
 
   function pickDate(dateKey) {
